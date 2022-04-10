@@ -432,8 +432,16 @@ export class TourDetailsComponent implements OnInit {
         
         emailjs.send('service_qhjhmhr', 'template_gfc4aq8',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
           console.log(result.text);
+          this.fullname='';
+          this.tel_no='';
+          this.mobile_no='';
+          this.email='';
+          this.departure_date='';
+          this.return_date='';
+          this.messages='';
+         
           
-          window.location.reload();
+         
           
           this.toastr.success('Your request has been sent', 'Success');
     
