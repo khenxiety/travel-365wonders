@@ -1,0 +1,121 @@
+section{
+    padding-top: var(--pd-large);
+    padding-bottom: var(--pd-large);
+    position: relative;
+
+    // background-color: #f5f5f5;
+    background-image: linear-gradient(to right,rgb(250, 248, 248),rgba(250, 248, 240, 0.970)), url('/assets/wonders/wondersoffc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+.book-header{
+    background-image: linear-gradient(rgba(37, 37, 37, 0.308),rgba(37, 37, 37, 0.308)), url('/assets/wonders/bg1.jpg') ;
+
+    background-size: cover;
+    background-position: center;
+    background-position-y:-300px ;
+    background-repeat: no-repeat;
+
+    
+    background-attachment: fixed;
+    height: 400px;
+    display: grid;
+    place-items: center;
+    h1{
+        font-size: 4.3rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight:900;
+        line-height: 1;
+        color: #fff;
+        position: relative;
+        width: max-content;
+        z-index: 1;
+
+
+
+    }
+
+
+
+}
+
+
+
+.about-img{
+    padding: 1.2em;
+    background-image:linear-gradient(to bottom,rgba(196, 196, 196, 0.63),rgb(255, 255, 255)), url('/assets/wonders/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+   
+    position: relative;
+    width: 90%;
+    transition: all .5s;
+    transform:rotateZ(-7deg);
+   
+   
+   
+   
+
+    &:hover{
+        
+        animation: shake 0.82s   linear ;
+
+
+    }
+
+   
+}
+
+.about-img::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/rip.svg) bottom center;
+    background-size: 150%;
+    filter: drop-shadow(0 6px 2px rgba(0,0,0,0.24));
+    
+    
+}
+.accre{
+    transition: .5s all;
+    width: 100%;
+    z-index: 999;
+    
+    
+
+    &:hover{
+        transform: scale(1.4) translateX(-80px);
+        background: #fff;
+       
+
+        
+        box-shadow: 0 2px 30px rgba(65, 65, 65, 0.5);
+    }
+}
+
+
+@keyframes shake{
+   
+    25%{
+        transform: rotate(-3deg);
+    }
+    50%{
+        transform: rotate(3deg);
+    }
+    75%{
+        transform: rotate(-3deg);
+        transform: scale(1.1);
+
+        
+
+    }
+    
+
+}
+

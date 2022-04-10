@@ -1,0 +1,29 @@
+footer{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    background: #222222;
+
+    color: white;
+
+    ul{
+        li{
+            a{
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .footer-text{
+        p{
+            font-size: 1rem;
+            font-weight: 100;
+            color: rgb(219, 219, 219);
+            font-family: 'Poppins', sans-serif;
+        }
+
+    }
+    
+
+}

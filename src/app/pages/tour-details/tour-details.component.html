@@ -1,0 +1,281 @@
+<app-header></app-header>
+<header class="book-header">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="h1-responsive">
+          <span style="font-weight: 200">Find Your</span>
+          <br />
+          Destination
+        </h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="" style="position: relative" id="blur">
+  <div class="container">
+    
+
+    <div class="row">
+      <div class="col-md-8" style="">
+        <div class="tour-container">
+          <div class="tour-header" >
+            <div class="left-item">
+              <h2 class="h2-responsive">{{tourists.title}}</h2>
+
+              <p style="margin: 0;">
+                <i class="uil uil-location-point" style="color: var(--red)"></i>
+                {{tourists.location}}
+              </p>
+            </div>
+            <div class="right-item">
+
+                <div class="rating">
+
+                    <h5>Ratings: {{ tourists.rating }}</h5>
+                  
+
+                </div>
+            </div>
+          </div>
+          <hr style="width: 100%; border: 5px solid #f00206" />
+
+          <div class="tour-details my-2">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col flex">
+                  <i class="uil uil-clock"></i>
+                  <div class="details-container">
+                    <h5>Duration</h5>
+                    <p>{{tourists.days}}</p>
+                  </div>
+                </div>
+                <div class="col flex">
+                  <i class="uil uil-ship"></i>
+                  <div class="details-container">
+                    <h5>Tour Type</h5>
+                    <p>{{tourists.category}}</p>
+                  </div>
+                </div>
+
+                <div class="col flex">
+                  <i class="uil uil-users-alt"></i>
+                  <div class="details-container">
+                    <h5>Group Size</h5>
+                    <p>{{tourists.people}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tour-image">
+            <img src="{{tourists.image}}" alt="" />
+          </div>
+          <div class="tour-m-details">
+              <div class="text-wrap">
+                  <p>{{tourists.description}}</p>
+              </div>
+              <div class="text-wrap">
+                <h5>Package Inclusions:</h5>
+                <ul>
+                    <li><p>- 2 nights hotel accommodation</p>  </li>
+                    <li><p>- 2 days Baguio City Tour</p></li>
+                    <li><p>- Daily Breakfast</p></li>
+                    <li><p>- Round trip airport transfer (airport-hotel-airport)</p></li>
+    
+                </ul>
+
+              </div>
+              <div class="text-wrap">
+                <h5>Package Exclusions:</h5>
+                <ul>
+                    <li><p>- RT PCRT TEST</p>  </li>
+                    <li><p>- AIRFARE TICKET</p></li>
+                    <li><p>- TRAVEL INSURANCE</p></li>
+                    <li><p>- LGU REQUIREMENTS</p></li>
+    
+                </ul>
+
+              </div>
+
+              <div class="frame">
+                <div class="text-wrap">
+                <h5>Check out this <a href="">Facebook</a>  for more details and to keep updated.</h5>
+
+
+                </div>
+                <iframe [src]="url" width="500" height="750" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+              </div>
+
+           
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div class="col" style="">
+        <div class="form-card">
+          <div class="form-header">
+            <h3 class="h3-responsive">from {{ tourists.price }}</h3>
+          </div>
+          <div class="form-header2">
+            <h5 class="h3-responsive">Fill-up the Form to Book</h5>
+          </div>
+
+          <div class="forms">
+            <form action="">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your name"
+                  [(ngModel)]="fullname"
+                  name="fullname"
+                />
+                <label for="">Name</label>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="ex: juan@gmail.com"
+                  [(ngModel)]="email"
+                />
+                <label for="email" class="">Your email</label>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="mobile"
+                  name="mobile"
+                  class="form-control"
+                  placeholder="09*********"
+                  [(ngModel)]="mobile_no"
+                />
+                <label for="mobile" class="">Mobile No.</label>
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="mobile"
+                  name="mobile"
+                  class="form-control"
+                  placeholder="4**-****-****"
+                  [(ngModel)]="tel_no"
+                />
+                <label for="mobile" class="">Telephone No.</label>
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-control"
+                  placeholder="Enter your destination"
+                  [(ngModel)]="destination"
+                />
+                <label for="subject" class="">Destination</label>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="package"
+                  name="package"
+                  class="form-control"
+                  placeholder="Enter your destination"
+                  [(ngModel)]="package"
+                />
+                <label for="subject" class="">Tour Package</label>
+              </div>
+              <div class="form-group "  >
+                
+                  <div class="">
+                    <input
+                      type="datetime-local"
+                      class="form-control"
+                      [(ngModel)]="departure_date"
+                      id="birthdaytime"
+                      name="date"
+                    />
+                    <label for="birthdaytime" class="">Departure Date</label>
+                  </div>
+
+                  <div class="">
+                    <input
+                      type="datetime-local"
+                      [(ngModel)]="return_date"
+                      class="form-control"
+                      id="birthdaytime"
+                      name="birthdaytime"
+                    />
+                    <label for="birthdaytime" class="">Return Date*</label>
+                  </div>
+                
+              </div>
+              <div class="form-group">
+                <div class="counter d-flex">
+                  <button class="side-btn decrement btn" type="button" (click)="decrementChild('adult')">-</button>
+                  <input class="text-center" type="number" disabled [(ngModel)]="adult" max="9" name="adult" autocomplete="off">
+                  <button class="side-btn increment btn" type="button" (click)="incrementChild('adult')">+</button>
+
+                </div>
+                <label for="adult" class="">Adults (12+)</label>
+              </div>
+                <div class="form-group">
+                    <!-- <input
+                    type="number"
+                    id="child"
+                    name="child"
+                    class="form-control"
+                    placeholder="Enter No. of Children"
+                    [max]="max"
+                    autocomplete="off"
+                    [(ngModel)]="child"
+                    min="0"/> -->
+                    <div class="counter d-flex">
+                      <button class="side-btn decrement btn" type="button" (click)="decrementChild('child')">-</button>
+                      <input class="text-center" type="number" disabled [(ngModel)]="child" max="9" name="child" autocomplete="off">
+                      <button class="side-btn increment btn" type="button" (click)="incrementChild('child')">+</button>
+
+                    </div>
+                    <label for="child" class="">Children (2-11)</label>
+                </div>
+                <div class="form-group  w-100">
+
+                  <div class="counter d-flex">
+                    <button class="side-btn decrement btn" type="button" (click)="decrementChild('infants')">-</button>
+                    <input class="text-center" type="number" disabled [(ngModel)]="infants" max="9" name="infants" autocomplete="off">
+                    <button class="side-btn increment btn" type="button" (click)="incrementChild('infants')">+</button>
+
+                  </div>
+                  <label for="child" class="">Infants</label>
+
+                </div>
+                <div class="form-group">
+                  Total Person: <span class="total-person ">{{total}}</span>
+                </div>
+
+                <div class="form-group button-grp">
+                    <button type="button" class="btn custom-btn" (click)="addToCart()">Book Now</button>
+                </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-tilt-bottom></app-tilt-bottom>
+</section>
+<app-footer></app-footer>

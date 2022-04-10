@@ -1,0 +1,65 @@
+
+<head>
+  <title>Services</title>
+</head>
+<app-header></app-header>
+<header class="book-header">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="h1-responsive">
+          <span style="font-weight: 200;">Services we</span>
+           <br>
+          Offer
+        </h1>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<section class="" style="position: relative" id="blur">
+  
+
+  
+
+  <div class="container">
+    
+    <div class="sect-header my-5">
+      <h2>Services</h2>
+
+      <p>WHAT CAN WE DO FOR YOU?</p>
+      <hr style=" width:100px;border: 5px solid #f00206;">
+
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  my-5  " >
+      <div class="col  my-3" *ngFor="let service of services " >
+        <div class="services-container  card">
+
+          <img src="{{ service.img }}" alt="" height="350px" width="100%">
+
+          <div class="texts text-center d-flex flex-column my-4" style="gap: 1.2em;">
+            <span>{{ service.title }}</span>
+
+            <p>{{ service.description }}</p>
+            <div class="buttons">
+              <button class="btn " style="background-color: red; color:white;" (click)="navigate(service.route)">Check it out</button>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+    
+
+    
+  </div>
+  
+  
+
+  <app-tilt-bottom></app-tilt-bottom>
+</section>
+<app-footer></app-footer>

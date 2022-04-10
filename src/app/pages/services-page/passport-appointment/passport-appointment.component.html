@@ -1,0 +1,649 @@
+<app-header2></app-header2>
+
+<section class="" style="position: relative" id="blur">
+  <!--Section heading-->
+
+  <div class="container">
+    <img class="img-fluid bg-image" src="./assets/wonders/xxxxxx.png" alt="" />
+
+    <h2 class="h1-responsive font-weight-bold my-4">
+      DFA Passport Appointment
+    </h2>
+
+    <!--Section description-->
+    <p class="w-responsive mx-auto mb-2 mt-5">Please fill this up:</p>
+    <div class="row">
+      <div class="col-md-9 mb-md-0 mb-5">
+        <form id="contact-form" name="contact-form" (ngSubmit)="onSubmit()">
+          <div class="row my-2">
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  class="form-control"
+                  placeholder="ex: Juan "
+                  [(ngModel)]="firstName"
+                  required
+                />
+                <label for="name" class="label">First Name</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="pBirth_city"
+                  name="pBirth_city"
+                  class="form-control"
+                  placeholder="ex: Quezon City"
+                  [(ngModel)]="pBirth_city"
+                  required
+                />
+                <label for="email" class="">Place of Birth (City)</label>
+              </div>
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  class="form-control"
+                  placeholder="ex: Dela Cruz"
+                  [(ngModel)]="lastName"
+                  required
+                />
+                <label for="mobile" class="">Last name:</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="pBirth_province"
+                  name="pBirth_province"
+                  class="form-control"
+                  placeholder="ex: Rizal"
+                  [(ngModel)]="pBirth_province"
+                  required
+                />
+                <label for="subject" class="">(Province)</label>
+              </div>
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="middleName"
+                  name="middleName"
+                  class="form-control"
+                  placeholder="ex: Manalo"
+                  [(ngModel)]="middleName"
+                  required
+                />
+                <label for="mobile" class="">Middle Name</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  class="form-control"
+                  maxlength="11"
+                  [(ngModel)]="phoneNumber"
+                  required
+                />
+                <label for="subject" class="">Phone Number</label>
+              </div>
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class="col-md-3">
+              <div class="md-form mb-0">
+                <select
+                  class="form-select"
+                  [(ngModel)]="civil_status"
+                  id="civil_status"
+                  name="civil_status"
+                  aria-label="Default select example"
+                >
+                  <option selected>Select</option>
+                  <option value="Single">Single</option>
+                  <option value="Married">Married</option>
+                  <option value="Widowed">Widowed</option>
+                  <option value="Separated">Separated</option>
+                </select>
+                <label for="mobile" class="">Civil Status</label>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="md-form mb-0">
+                <select
+                  class="form-select"
+                  [(ngModel)]="gender"
+                  id="gender"
+                  name="gender"
+                  aria-label="Default select example"
+                >
+                  <option selected>Select gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="LGBTQ">LGBTQ</option>
+                </select>
+                <label for="mobile" class="">Gender</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="mobileNumber"
+                  name="mobileNumber"
+                  class="form-control"
+                  [(ngModel)]="mobileNumber"
+                  placeholder="09*********"
+                  maxlength="11"
+                  required
+                />
+                <label for="subject" class="">Mobile Number</label>
+              </div>
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class="col-md-2">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="bdate_MM"
+                  name="bdate_MM"
+                  class="form-control"
+                  [(ngModel)]="bdate_MM"
+                  required
+                  placeholder="ex: 08"
+                  maxlength="2"
+                />
+                <label for="mobile" class="">Birthdate (MM)</label>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="bdate_DD"
+                  name="bdate_DD"
+                  class="form-control"
+                  [(ngModel)]="bdate_DD"
+                  placeholder="ex: 31"
+                  required
+                  maxlength="2"
+                />
+                <label for="mobile" class="">(DD)</label>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="bdate_YR"
+                  name="bdate_YR"
+                  class="form-control"
+                  [(ngModel)]="bdate_YR"
+                  placeholder="ex: 1995"
+                  required
+                  maxlength="4"
+                />
+                <label for="mobile" class="">(YR)</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="ex: example@gmail.com"
+                  [(ngModel)]="email"
+                  required
+                />
+                <label for="subject" class="">Email Address</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row my-2">
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="bLegitimacy"
+                  name="bLegitimacy"
+                  class="form-control"
+                  [(ngModel)]="bLegitimacy"
+                  required
+                />
+                <label for="subject" class="">Birth Legitimacy</label>
+              </div>
+            </div>
+
+            <!-- father Information ############################################################################################## -->
+
+            <div class="row my-4">
+              <div class="col">
+                <h5 style="color: var(--red)">FATHER's INFORMATION</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="fathers_firstname"
+                    name="fathers_firstname"
+                    class="form-control"
+                    placeholder="ex: Juan"
+                    [(ngModel)]="fathers_firstname"
+                    required
+                  />
+                  <label for="name" class="label">First Name</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="fathers_lastname"
+                    name="fathers_lastname"
+                    class="form-control"
+                    placeholder="ex: Dela Cruz"
+                    [(ngModel)]="fathers_lastname"
+                    required
+                  />
+                  <label for="email" class="">Last Name</label>
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="fathers_middle"
+                    name="fathers_middle"
+                    class="form-control"
+                    placeholder="ex: Dela Cruz"
+                    [(ngModel)]="fathers_middle"
+                    required
+                  />
+                  <label for="name" class="label">Middle Name</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="fathers_citizenship"
+                    name="fathers_citizenship"
+                    class="form-control"
+                    placeholder="ex: Filipino"
+                    [(ngModel)]="fathers_citizenship"
+                    required
+                  />
+                  <label for="email" class="">Citizenship</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- mother Information ############################################################################################## -->
+
+            <div class="row my-4">
+              <div class="col">
+                <h5 style="color: var(--red)">MOTHER's INFORMATION</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="mothers_firstname"
+                    name="mothers_firstname"
+                    class="form-control"
+                    placeholder="ex: Juan "
+                    [(ngModel)]="mothers_firstname"
+                    required
+                  />
+                  <label for="name" class="label">First Name</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="mothers_lastname"
+                    name="mothers_lastname"
+                    class="form-control"
+                    placeholder="ex: Dela Cruz"
+                    [(ngModel)]="mothers_lastname"
+                    required
+                  />
+                  <label for="email" class="">Last Name</label>
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="mothers_middle"
+                    name="mothers_middle"
+                    class="form-control"
+                    placeholder="ex: Dela Cruz"
+                    [(ngModel)]="mothers_middle"
+                    required
+                  />
+                  <label for="name" class="label">Middle Name</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="mothers_citizenship"
+                    name="mothers_citizenship"
+                    class="form-control"
+                    placeholder="ex: Filipino"
+                    [(ngModel)]="mothers_citizenship"
+                    required
+                  />
+                  <label for="email" class="">Citizenship</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- spouse Information ############################################################################################## -->
+            <div class="row my-4">
+              <div class="col">
+                <h5 style="color: var(--red)">SPOUSE INFORMATION</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="spouse_firstname"
+                    name="spouse_firstname"
+                    class="form-control"
+                    placeholder="ex: Juan "
+                    [(ngModel)]="spouse_firstname"
+                    required
+                  />
+                  <label for="name" class="label">First Name</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="spouse_lastname"
+                    name="spouse_lastname"
+                    class="form-control"
+                    placeholder="ex: Dela Cruz"
+                    [(ngModel)]="spouse_lastname"
+                    required
+                  />
+                  <label for="email" class="">Last Name</label>
+                </div>
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="spouse_middle"
+                    name="spouse_middle"
+                    class="form-control"
+                    placeholder="ex: Dela Cruz"
+                    [(ngModel)]="spouse_middle"
+                    required
+                  />
+                  <label for="name" class="label">Middle Name</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="spouse_citizenship"
+                    name="spouse_citizenship"
+                    class="form-control"
+                    placeholder="ex: Filipino"
+                    [(ngModel)]="spouse_citizenship"
+                    required
+                  />
+                  <label for="email" class="">Citizenship</label>
+                </div>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <select
+                  class="form-select"
+                  [(ngModel)]="appointmentFor"
+                  name="appointmentFor"
+                  (click)="applicant()"
+                  id="appointmentFor"
+                >
+                  <option selected>Select</option>
+                  <option value="New Applicant">New Applicant</option>
+                  <option value="Renewal">Renewal</option>
+                </select>
+  
+                </div>
+              </div>
+              
+              
+              <label for="appointmentFor">Appointment for:</label>
+            </div>
+
+            <!-- passport Information ############################################################################################## -->
+            <div class="openRenewal" *ngIf="renewalOpen==true">
+              <div class="row my-4">
+                <div class="col">
+                  <h5 style="color: var(--red)">For renewal:</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="passportNumber"
+                      name="passportNumber"
+                      class="form-control"
+                      placeholder="ex: P0*******"
+                      [(ngModel)]="passportNumber"
+                      required
+                    />
+                    <label for="name" class="label">PASSPORT NUMBER</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="issuingAuth"
+                      name="issuingAuth"
+                      class="form-control"
+                      [(ngModel)]="issuingAuth"
+                      required
+                    />
+                    <label for="email" class="">ISSUING AUTHORITY</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-md-2">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="passportDate_MM"
+                      name="passportDate_MM"
+                      class="form-control"
+                      placeholder="MM"
+                      [(ngModel)]="passportDate_MM"
+                      maxlength="2"
+                      required
+                    />
+                    <label for="mobile" class="">DATE OF ISSUE (MM)</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="passportDate_DD"
+                      name="passportDate_DD"
+                      class="form-control"
+                      placeholder="DD"
+                      [(ngModel)]="passportDate_DD"
+                      maxlength="2"
+                      required
+                    />
+                    <label for="mobile" class="">(DD)</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="passportDate_YR"
+                      name="passportDate_YR"
+                      class="form-control"
+                      placeholder="YR"
+                      [(ngModel)]="passportDate_YR"
+                      maxlength="4"
+                      required
+                    />
+                    <label for="mobile" class="">(YR)</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="expiryDate_MM"
+                      name="expiryDate_MM"
+                      class="form-control"
+                      placeholder="MM"
+                      [(ngModel)]="expiryDate_MM"
+                      maxlength="2"
+                      required
+                    />
+                    <label for="mobile" class="">EXPIRY DATE (MM)</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="expiryDate_DD"
+                      name="expiryDate_DD"
+                      class="form-control"
+                      placeholder="DD"
+                      [(ngModel)]="expiryDate_DD"
+                      maxlength="2"
+                      required
+                    />
+                    <label for="mobile" class="">(DD)</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="expiryDate_YR"
+                      name="expiryDate_YR"
+                      class="form-control"
+                      placeholder="YR"
+                      [(ngModel)]="expiryDate_YR"
+                      maxlength="4"
+                      required
+                    />
+                    <label for="mobile" class="">(YR)</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-md-left">
+            <input type="submit" class="btn cstm-btn" />
+          </div>
+        </form>
+
+        <div class="status"></div>
+      </div>
+
+      <div class="col-md-3 text-center">
+        <h4 class="h4-responsive">365 Wonders Address and contact</h4>
+        <ul class="list-unstyled mb-0">
+          <li>
+            <i class="uil uil-map-pin-alt"></i>
+            <p>
+              Unit 3 ADEE Bldg Purok 1, Brgy. Bolbok Batangas City 4200
+              Philippines
+            </p>
+          </li>
+
+          <li>
+            <i class="uil uil-phone"></i>
+            <p>0915 780 0776 / 0929 262 0985</p>
+          </li>
+
+          <li>
+            <i class="uil uil-at"></i>
+            <p><a href="">reservations@365wonders.com</a></p>
+          </li>
+        </ul>
+
+        <div class="text-wrapper mt-5" style="text-align: left">
+          <strong>Note:</strong>
+          <p class="w-responsive mx-auto">
+            Once we receive the filled form, we will contact you shortly to
+            confirm booking.
+          </p>
+          <p class="w-responsive mx-auto">
+            If you did not receive a confirmation email, please contact us in
+            our <a href="tel:+63-915-780-0776">contact number </a> or email us
+            at our <a href="reservations@365wonders.com">email.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

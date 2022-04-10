@@ -1,0 +1,50 @@
+<section  id="landing">
+    
+    <div class="container" >
+        <div class="row align-items-center" >
+
+            <div class=" col-md-6 col-sm-12 my-5"  data-aos="fade-up" data-aos-duration="2000"
+            >
+                <div class="text-wrapper " >
+                    <h2 >{{ title }}</h2>
+                    <h1 class="my-3">We do the  planning for you</h1>
+
+                    <p style="color: #ffffff;">Let’s book the vacation of your dreams!</p>
+                </div>
+                <div class="button mt-4">
+                    <button class="btn custom-btn" routerLink="/booking">BOOK NOW</button>
+
+
+                </div>
+
+            </div>
+            
+            <div class="col-md-6 col-sm-12 my-3 cstm" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+                <!-- <div class="video mat-shadow " data-aos="fade-up"
+                data-aos-duration="500">
+                    <iframe class="mat-shadow"  src="https://www.youtube.com/embed/IMc1in561jc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+                </div> -->
+              
+                    
+
+
+            </div>
+        </div>
+    </div>
+    <div class="buttons" (scroll)="onscroll()" 
+    [ngClass]="navbarfixed ? 'fixed' : 'nofixed'">
+        <a (click)="toTop()" style="cursor: pointer;">
+        <svg data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300"  viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="25" cy="25" r="25" fill="#C4C4C4" fill-opacity="0.44"/>
+            <path d="M19.2625 20.7375L25 26.4625L30.7375 20.7375L32.5 22.5L25 30L17.5 22.5L19.2625 20.7375Z" fill="#F3F3F3"/>
+        </svg>
+    </a>
+
+    </div>
+    
+        
+    
+
+</section>

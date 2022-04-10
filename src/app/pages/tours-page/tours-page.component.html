@@ -1,0 +1,151 @@
+<app-header></app-header>
+<header class="book-header">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="h1-responsive">
+            <span style="font-weight: 200;">Find Your</span>
+             <br>
+            Destination
+          </h1>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+
+<section class="" style="position: relative;" id="blur">
+  
+
+    
+
+ 
+  
+
+  <div class="container" >
+    <div class="sect-header my-5">
+      <h2 class="h2-responsive ">Promotion Tours in <img src="./assets/wonders/xxxxxx.png" height="auto" width="30%" alt="">
+      </h2>
+
+    
+        <p>EXPLORE A DIFFERENT WAY TO TRAVEL</p>
+      <hr style=" width:100px;border: 5px solid #f00206;">
+
+
+      </div>
+      <div class="row ">
+    
+      
+        <div class="col">
+          <div class="text-wrapper my-5">
+            <h1 class="h1-responsive text-center">
+            Search for your desired Destination
+
+
+            </h1>
+          </div>
+          <form action="">
+            <div class="form-group d-flex " style="gap: 2em;">
+                <input type="text"   [(ngModel)]="searchResult" (keyup)="search()"  name="searchResult" class="form-control" id="searchResult" aria-describedby="emailHelp" >
+                <button class="btn cstm-btn" style="background-color: var(--red); color: white;" (click)="search()"> Search</button>
+            </div>
+          </form>
+
+
+        </div>
+
+
+     
+      </div>
+      <div class="row my-5">
+        <div class="col">
+          <div class="filter-button" style="display: flex; justify-content: right;">
+            
+              <button class="btn " style="background-color: var(--red); color: white;" (click)="print()"><i class="uil uil-filter"></i> Filter</button>
+            </div>
+         
+        </div>
+      </div>
+
+      
+      
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  my-5">
+
+        
+        <div class="col my-3" *ngFor="let test of tourists ">
+        <h5 *ngIf="searchActive==true" class="h5-responsive mb-4">Search Result: </h5>
+        
+          <div data-aos="fade-up"
+            data-aos-duration="2000" class="card" style="position: relative;">
+              
+              <img class="card-img-top" src="{{ test.image }}" height="60%" alt="Card image cap">
+              <div class="card-body">
+                <div class="card-desc ">
+                  <div class="information">
+                    <h3 class="h3-responsive my-4 text-center">{{test.title}}</h3>
+                    <div class="details text-center ">
+                      <p><i class="uil uil-location-point text-danger"></i>{{test.location}}</p>
+                     
+                      <p><i class="uil uil-clock text-danger"></i>{{test.days}}</p>
+                      <p><i class="uil uil-telegram-alt text-danger"></i><span style="text-transform: capitalize;">{{test.category}}</span> </p>
+
+
+                    </div>
+                    <div class="view-button my-4">
+                      <button class="btn " (click)="details(test)">View Package</button>
+                      
+  
+                    </div>
+    
+    
+                  </div>
+                  
+
+              </div>
+
+              
+
+  
+              </div>
+              
+
+
+            </div>
+        </div>
+      </div>
+  </div>
+
+  <app-tilt-bottom></app-tilt-bottom>
+
+  
+
+ 
+</section>
+<app-footer></app-footer>
+
+
+<div class="modal fade" id="filter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Filter Posts</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="category">Category</label>
+        <select class="form-control" id="category">
+          <option>All</option>
+          <option>Category 1</option>
+          <option>Category 2</option>
+          <option>Category 3</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Filter</button>
+      </div>
+    </div>
+  </div>
+</div>

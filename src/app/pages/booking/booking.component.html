@@ -1,0 +1,312 @@
+<app-header></app-header>
+
+
+<section class="blur" style="position: relative;" id="blur">
+  
+  <header class="book-header">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="h1-responsive">
+            <span style="font-weight: 200; ">Book Your</span>
+             <br>
+           Adventure
+            
+          </h1>
+      
+
+        </div>
+      </div>
+    </div>
+
+  </header>
+    
+  
+   
+
+ 
+  
+
+  <div class="container">
+
+    <!-- <img class="img-fluid bg-image" src="./assets/wonders/xxxxxx.png"   alt=""> -->
+
+
+    <div class="header-wrap">
+      <h2 class="h1-responsive font-weight-bold my-4" >Booking Inquiry Form </h2>
+  
+    <p class=" w-responsive mx-auto mb-5">
+        Once we receive the filled form, we will contact you shortly to confirm booking.
+    </p>
+
+    </div>
+    <hr  style=" width:100px;border: 5px solid #c01b1e;">
+
+
+    
+    <div class="row">
+    
+      <div class="col-md-9 mb-md-0 mb-5">
+        <form
+          id="contact-form"
+          name="contact-form"
+          
+        
+        >
+        
+          <div class="row my-4">
+            
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input type="text" id="name" name="name" [(ngModel)]="fullname" class="form-control" placeholder="ex: Juan Dela Cruz" />
+                <label for="name" class="label">Your name</label>
+              </div>
+            </div>
+           <br>
+           <br>
+
+           <br>
+
+            <div class="col-md-6 ">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="ex: juan@gmail.com"
+                  [(ngModel)]="email"
+                />
+                <label for="email" class="" >Your email</label>
+              </div>
+            </div>
+            
+          
+          </div>
+          <div class="row my-4">
+            <div class="col-md-12">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="mobile"
+                  name="mobile"
+                  class="form-control"
+                  placeholder="09*********"
+                  [(ngModel)]="mobile_no"
+                />
+                <label for="mobile" class="">Mobile No.</label>
+              </div>
+            </div>
+          </div>
+          <div class="row my-4">
+            <div class="col-md-12">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="mobile"
+                  name="mobile"
+                  class="form-control"
+                  placeholder=""
+                  [(ngModel)]="tel_no"
+                />
+                <label for="mobile" class="">Telephone No.</label>
+              </div>
+            </div>
+          </div>
+       
+          <div class="row my-4">
+            <div class="col-md-12">
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-control"
+                  placeholder="Enter your destination"
+                  [(ngModel)]="destination"
+
+                  
+                />
+                <label for="subject" class="">Destination</label>
+              </div>
+            </div>
+          </div>
+          <div class="row my-4">
+            <div class="col">
+              <div class="md-form mb-0">
+                <input  type="datetime-local" class="form-control" [(ngModel)]="departure_date" id="birthdaytime" name="date">
+                <label for="birthdaytime" class="">Departure Date</label>
+                  
+                
+              </div>
+              
+            </div>
+            <div class="col">
+                <div class="md-form mb-0">
+                  <input type="datetime-local" [(ngModel)]="return_date" class="form-control" id="birthdaytime" name="birthdaytime">
+                  <label for="birthdaytime" class="">Return Date*</label>
+                    
+                  
+                </div>
+                
+              </div>
+          </div>
+          <div class="row my-4">
+              <div class="col">
+                <div class="md-form mb-0">
+                    <!-- select no person checkkin -->
+
+                    
+                    <input
+                    type="number"
+                    id="adult"
+                    name="adult"
+                    class="form-control"
+                    placeholder="Enter No. of Adults"
+                    [max]="max"
+                    (input)="onChange()"
+                    autocomplete="off"
+                    [(ngModel)]="adult"
+                    min="0"
+                    
+                   
+  
+                    
+                  />
+                  <label for="adult" class="text-muted">Adult (12+)</label>
+
+                  <label for="adult" class="">No. of Person (max number: 9 out of<span style="color:var(--red); font-weight:600;"> {{ max }}</span> ) {{ maxmessage }}</label>
+
+                
+
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form mb-0">
+                  <input
+                  type="number"
+                  id="child"
+                  name="child"
+                  class="form-control"
+                  placeholder="Enter No. of Child"
+                  [max]="maxChild"
+                  min="0"
+                  (input)="onChange()"
+                  autocomplete="off"
+                  [(ngModel)]="child"
+                  
+
+                  
+                />
+                <label for="child" class="text-muted">Child (2-11)</label>
+
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="md-form mb-0">
+                  <input
+                  type="number"
+                  id="infants"
+                  name="infants"
+                  class="form-control"
+                  placeholder="Enter No. of Infants"
+                  [max]="maxChild"
+                  min="0"
+                  [(ngModel)]="infants"
+
+
+                  
+                />
+                <label for="infants" class="text-muted">Infant</label>
+
+                  
+                </div>
+              </div>
+            
+            
+            
+          
+          </div>
+          
+          
+     
+          <div class="row my-4">
+      
+            <div class="col-md-12">
+              <div class="md-form">
+                <textarea
+                  type="text"
+                  id="message"
+                  name="message"
+                  [(ngModel)]="messages"
+                  rows="2"
+                  class="form-control md-textarea"
+                  
+                ></textarea>
+                <label for="message">Your message</label>
+              </div>
+            </div>
+          </div>
+    
+        </form>
+
+        <div class=" text-md-left">
+          <button (click)="sendMail()"  type="submit" class="btn cstm-btn">Submit</button>
+        </div>
+        <div class="status"></div>
+      </div>
+     
+      <div class="col-md-3 text-center">
+          <h4 class="h4-responsive">365 Wonders Address and contact</h4>
+        <ul class="list-unstyled mb-0">
+          <li>
+            <i class="uil uil-map-pin-alt"></i>
+            <p>Unit 3 ADEE Bldg
+                Purok 1, Brgy. Bolbok
+                Batangas City
+                4200
+                Philippines</p>
+          </li>
+
+          <li>
+            <i class="uil uil-phone"></i>
+            <p>0915 780 0776 / 0929 262 0985
+                </p>
+             
+          </li>
+
+          <li>
+            <i class="uil uil-at"></i>
+            <p> <a href="">reservations@365wonders.com</a> </p>
+          </li>
+        </ul>
+
+        <h5 class="h5-responsive">Business Hours</h5>
+        <ul class="list-unstyled mb-0">
+          <li> <p> <span style="font-weight: 600;"> Mon:</span> 	9:00 AM – 8:00 PM</p></li>
+          <li> <p> <span style="font-weight: 600;"> Tues:</span> 	9:00 AM – 8:00 PM</p></li>
+          <li> <p> <span style="font-weight: 600;"> Wed:</span> 	9:00 AM – 8:00 PM</p></li>
+          <li> <p> <span style="font-weight: 600;"> Thurs:</span> 	9:00 AM – 8:00 PM</p></li>
+          <li> <p> <span style="font-weight: 600;"> Fri:</span> 	9:00 AM – 8:00 PM</p></li>
+          <li> <p> <span style="font-weight: 600;"> Sat:</span> 	9:00 AM – 5:00 PM</p></li>
+          <li> <p> <span style="font-weight: 600;"> Sun:</span> 	Closed</p></li>
+          
+          
+        </ul>
+
+
+      </div>
+     
+    </div>
+  </div>
+
+
+
+  
+  <app-tilt-bottom></app-tilt-bottom>
+  
+</section>
+
+<app-footer></app-footer>

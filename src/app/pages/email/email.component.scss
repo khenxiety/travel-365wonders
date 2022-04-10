@@ -1,0 +1,164 @@
+section{
+    padding-top: 5em;
+    padding-bottom: 5em;
+    min-height: 100vh;
+    position: relative;
+    background-color: white;
+
+}
+section.open{
+    filter: blur(5px);
+}
+
+.bg-image{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    z-index: -1;
+    opacity: .1;
+    filter: blur(9px);
+    
+    
+}
+
+
+select,input,textarea{
+    background-color: #f1f3f3;
+    border: .5px solid #e7e7e7;
+    outline: #b90000;
+    &:focus{
+        
+    }
+}
+label{
+    position: relative;
+}
+
+label::after{
+    content: "*";
+    color: red;
+    font-size: .8em;
+    position: absolute;
+    font-weight: 600;
+}
+li{
+    display: flex;
+    gap: 10px;
+    
+    align-items: center;
+    p{
+        margin: 0;
+        padding: 0;
+    }
+}
+
+i{
+    color:red;
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+
+.cstm-btn{
+    background-color: #fd030f;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: .7em;
+    width: 200px;
+    border-radius: 50px;
+    transition: all 0.3s ease-out 0s;
+    float: right;
+
+
+    &:hover{
+        background-color: #b90000;
+    }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+
+
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    transition: all 0.3s ease-out 0s;
+    background-color: white;
+    
+   
+    height: 5em;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+
+
+    
+.navbar{
+    display: flex;
+    justify-content: space-between;
+
+    .logos{
+        // background: linear-gradient(to right, #f7f7f700, #ffffff,#ffffff, #f7f7f700);
+        // padding-left: 1em;
+        // padding-right: 1em;
+        img{
+            max-width: 170px;
+        }
+    }
+
+    .nav-items
+    {
+        display: flex;
+        gap: 2em;
+        margin: 0;
+        list-style: none;
+
+
+        li{
+
+            a{
+
+                text-decoration: none;
+                color: #1f1f1f;
+                font-size: 1rem;
+                
+                transition: all 0.3s ease-out 0s;
+                color: rgb(31, 31, 31);
+
+                
+            }
+        }
+
+    }
+
+}
+    
+    
+
+
+    
+
+    
+
+}
+
+@media (max-width: 768px) {
+    .book-header{
+        
+        h1{
+            font-size: 3rem;
+        }
+    }
+    
+}

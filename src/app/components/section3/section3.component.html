@@ -1,0 +1,260 @@
+<section id="landing 2">
+  <!-- <div class="custom-shape-divider-top-1648391722">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+    </svg>
+</div> -->
+
+  <div class="bg-image"></div>
+  <div class="container">
+    <div class="sect-header my-4">
+      <h2 class="h2-responsive ">Promotion Tours in <img src="./assets/wonders/xxxxxx.png" height="auto" width="30%" alt="">
+      </h2>
+
+      <p>EXPLORE A DIFFERENT WAY TO TRAVEL</p>
+      <hr style=" width:100px;border: 5px solid #f00206;">
+
+    </div>
+    <br>
+    <br>
+
+  
+
+    <div class="row">
+      <div class="row-header my-4" >
+        <h3>Hot Promotion Tours</h3>
+        <hr  style=" width:100px;border: 5px solid #c01b1e;">
+
+      </div>
+      
+     
+
+      <div class="col">
+        <swiper
+          #swiperVirtualRef
+          [autoplay]="{
+            delay: 3000,
+            disableOnInteraction: false
+          }"
+          
+          [spaceBetween]="50"
+          [pagination]="{ type: 'fraction' }"
+          [virtual]="true"
+          slideActiveClass="swiper-active whyWouldIuseCustomClass"
+          [centeredSlides]="false"
+          [navigation]="true"
+          class="mySwiper shadow-drop-2-center"
+          id="mySwiperID"
+          [breakpoints]="{
+
+            '@0.75': {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            '@0.80': {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            '@1.00': {
+              slidesPerView: 3,
+              spaceBetween: 40
+            }
+          }"
+        >
+        <ng-template swiperSlide class="swiper-container" *ngFor="let tour of tours ">
+          <div  class="card h-100" style="position: relative; height: auto;">
+            
+            <img class="card-img-top" src="{{ tour.image }}" height="100%" alt="Card image cap">
+
+            <div class="card-desc" (click)="test()">
+              <div class="information">
+                <h3 class="h3-responsive">{{tour.title}}</h3>
+                
+                <div class="view-button">
+                   <button (click)="details(tour)" class="btn btn-primary custom-btn">View</button>
+
+
+                </div>
+
+
+              </div>
+
+              
+              
+
+              
+
+            </div>
+            
+
+
+          </div>
+        </ng-template>
+        </swiper>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br>
+
+    <div class="row">
+      <div class="row-header my-4" >
+        <h3>Local Tour Promos</h3>
+        <p>
+          We have a wide range of local tours that will make your trip a
+          memorable one.
+        </p>
+        <hr style=" width:100px;border: 5px solid #c01b1e;">
+
+      </div>
+      <br />
+      <br />
+      <div class="col">
+        <swiper
+          #swiperVirtualRef
+          [autoplay]="{
+            delay: 3000,
+            disableOnInteraction: false
+          }"
+          
+          [spaceBetween]="50"
+          [pagination]="{ type: 'fraction' }"
+          [virtual]="true"
+          slideActiveClass="swiper-active whyWouldIuseCustomClass"
+          [centeredSlides]="false"
+          [navigation]="true"
+          class="mySwiper"
+          id="mySwiperID"
+          [breakpoints]="{
+
+            '@0.75': {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            '@0.80': {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            '@1.00': {
+              slidesPerView: 3,
+              spaceBetween: 40
+            }
+          }"
+        >
+          <ng-template swiperSlide class="swiper-container" *ngFor="let tour of local ">
+            <div  class="card h-100" style="position: relative;">
+              
+              <img class="card-img-top" src="{{ tour.image }}" height="100%" alt="Card image cap">
+
+              <div class="card-desc">
+                <div class="information">
+                  <h3 class="h3-responsive">{{tour.title}}</h3>
+                  <div class="view-button">
+                  <button (click)="details(tour)" class="btn btn-primary custom-btn">View</button>
+
+
+                  </div>
+  
+  
+                </div>
+                
+
+  
+              </div>
+              
+
+
+            </div>
+          </ng-template>
+          
+          
+        </swiper>
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <br>
+
+    <div class="row">
+      <div class="row-header my-4" >
+        <h3>International Tour Promos</h3>
+        <p>
+          We have a wide range of international tours that will make your trip a
+          memorable one.
+        </p>
+        <hr style=" width:100px;border: 5px solid #f00206;">
+
+      </div>
+      <br />
+      <br />
+      <div class="col">
+        <swiper
+          #swiperVirtualRef
+          [autoplay]="{
+            delay: 3000,
+            disableOnInteraction: false
+          }"
+          
+          [spaceBetween]="50"
+          [pagination]="{ type: 'fraction' }"
+          [virtual]="true"
+          slideActiveClass="swiper-active whyWouldIuseCustomClass"
+          [centeredSlides]="false"
+          [navigation]="true"
+          class="mySwiper"
+          id="mySwiperID"
+          [breakpoints]="{
+
+            '@0.75': {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            '@0.80': {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            '@1.00': {
+              slidesPerView: 3,
+              spaceBetween: 40
+            }
+          }"
+        >
+        <ng-template swiperSlide class="swiper-container" *ngFor="let tour of international ">
+          <div  class="card h-100" style="position: relative; height: auto;">
+            
+            <img class="card-img-top" src="{{ tour.image }}" height="100%" alt="Card image cap">
+
+            <div class="card-desc" >
+              <div class="information">
+                <h3 class="h3-responsive">{{tour.title}}</h3>
+                
+                <div class="view-button">
+                   <button (click)="details(tour)" class="btn btn-primary custom-btn">View</button>
+
+
+                </div>
+
+
+              </div>
+
+              
+              
+
+              
+
+            </div>
+            
+
+
+          </div>
+        </ng-template>
+        </swiper>
+      </div>
+    </div>
+  </div>
+  <div class="section2-footer">
+    <a routerLink="/tours">See all Tours >></a>
+  </div>
+ 
+</section>

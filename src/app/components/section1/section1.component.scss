@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+section{
+
+    padding-top: var(--pd-large);
+    height: 100vh;
+    padding-bottom: var(--pd-large);
+    // background-image: linear-gradient(rgba(37, 37, 37, 0.164),rgba(37, 37, 37, 0.137)), url('/assets/wonders/landing_bg.png') ;
+    background-image:url('/assets/wonders/landing_bg.png') ;
+
+    
+    background-size: cover;
+    background-position: center;
+    background-position-x:6em ;
+    background-repeat: no-repeat;
+
+    
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+
+
+}
+
+.buttons{
+    transition: all .5s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 1em 0;
+    svg{
+        height: 50px;
+        width: 50px;
+        transition: all .5s;
+        path{
+            
+
+            animation: moving 2s alternate infinite ease-in-out;
+        }
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    
+}
+.fixed{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+transform: rotateZ(180deg);
+    padding: 30px;
+    z-index: 1;
+    svg{
+        circle{
+            fill: rgba(255, 0, 0, 0.342);
+        }
+        path{
+            fill: var(--red);
+        }
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+.nofixed{
+    position: absolute;
+    
+}
+
+@keyframes moving {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(10px);
+    }
+    
+}
+
+
+
+
+
+
+.text-wrapper{
+    h2{
+        font-family: 'Pacifico', cursive;
+            font-weight: 400;
+            font-size: 2vw;
+            color: #8f8f8f;
+
+
+    }
+    h1{
+            font-size: 3.8vw;
+            font-family: 'Poppins', sans-serif;
+            font-weight:900;
+            line-height: 1;
+            color: #fff;
+
+    }
+    p{
+        font-size: 1.5vw;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            line-height: 1;
+            margin-top: 20px;
+            color: #fff;
+
+    }
+    
+
+    
+}
+.cstm{
+    display: flex; 
+    padding: 0; 
+    justify-content: right;
+}
+
+.button{
+    .custom-btn{
+        background-color: var(--red);
+
+        width: 266px;
+        height: 72px;
+        color: white;
+        font-size: 20px;
+        border: 2px solid var(--red);
+        border-radius: var(--btn-radius);
+        transition: .5s;
+
+        text-transform: uppercase;
+
+
+
+                &:hover{
+        background-color: rgba(255, 0, 0, 0.411);
+
+                    color: white;
+                }
+    }
+}
+
+
+.video{
+    background-image:linear-gradient(to bottom,rgba(196, 196, 196, 0.63),rgb(255, 255, 255)), url('/assets/wonders/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 1.2em;
+    position: relative;
+    width: 90%;
+    transition: all .5s;
+
+
+    iframe{
+        width: 100%;
+        
+        aspect-ratio: 16/11;
+        
+    }
+
+    &:hover{
+        animation: shake 0.82s   linear ;
+        
+       
+
+    }
+    
+}
+
+
+.video::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/rip.svg) bottom center;
+    background-size: 150%;
+    filter: drop-shadow(0 6px 2px rgba(0,0,0,0.24));
+    
+    
+    
+    
+  }
+
+  @keyframes shake{
+   
+    25%{
+        transform: rotate(-3deg);
+    }
+    50%{
+        transform: rotate(3deg);
+    }
+    75%{
+        transform: rotate(-3deg);
+        transform: scale(1.1);
+
+        
+
+    }
+    
+
+}
+
+
+
+
+
+@media (max-width: 991px){
+    section{
+        
+        background-position-x:center;
+        
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    section{
+        padding-top: 7em;
+        
+        
+    }
+    .text-wrapper{
+        text-align: center;
+       
+        h2{
+        
+                font-size: 1.3rem;
+                
+    
+    
+        }
+        h1{
+                font-size: 3.6rem;
+            
+    
+        }
+        p{
+            font-size: 1.2rem;
+                
+    
+        }
+        
+    
+        
+    }
+    
+
+    .cstm{
+        justify-content: center;
+
+    }
+
+    .button{
+        text-align: center;
+        .custom-btn{
+            width: 200px;
+            height: 50px;
+            color: white;
+            font-size: 16px;
+    
+    
+    
+                  
+        }
+    }
+    
+}
+
+
+@media (max-width:446px){
+
+    .buttons{
+        
+        svg{
+            height: 35px;
+
+            
+        }
+        
+    }
+
+}

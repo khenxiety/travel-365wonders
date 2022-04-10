@@ -1,0 +1,110 @@
+section{
+    
+    padding: 120px 0;
+    min-height: 100vh;
+    position: relative;
+    font-family: var(--raleway);
+    background-color: white;
+
+
+}
+section.open{
+    filter: blur(5px);
+}
+.book-header{
+    background-image: linear-gradient(rgba(37, 37, 37, 0.308),rgba(37, 37, 37, 0.308)), url('/assets/wonders/bg3.jpg') ;
+
+    background-size: cover;
+    background-position: center;
+    background-position-y:-300px ;
+    background-repeat: no-repeat;
+
+    
+    background-attachment: fixed;
+    height: 400px;
+    display: grid;
+    place-items: center;
+    h1{
+        font-size: 4.3rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight:900;
+        line-height: 1;
+        color: #fff;
+        position: relative;
+        width: max-content;
+        z-index: 1;
+
+
+       
+
+    }
+
+
+
+}
+
+
+
+
+
+.cstm-btn{
+    background-color: #fd030f;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: .7em;
+    width: max-content  ;
+    border-radius: 50px;
+    transition: all 0.3s ease-out 0s;
+    float: right;
+
+
+    &:hover{
+        background-color: #b90000;
+    }
+}
+
+.services-container{
+    background-color: #ffffff;
+    border-radius: 4px;
+    height: 600px;
+
+   
+
+}
+.texts{
+    padding: 1em;
+    span{
+        color: var(--text-dark);
+        text-decoration: none;
+   
+        font-weight: 700;
+        font-size: 1.3em;
+    }
+    p{
+        font-weight: 400;
+        font-style: normal;
+
+     color: #6f6f6f;
+        font-size: 16px;
+        line-height: 1.6;
+        letter-spacing: 0px;
+    }
+}
+// .col{
+//     display: flex;
+//     flex-direction: column;
+//     gap: 10px;
+//     align-items: center;
+    
+// }
+
+@media (max-width: 768px) {
+    .book-header{
+        
+        h1{
+            font-size: 3rem;
+        }
+    }
+    
+}

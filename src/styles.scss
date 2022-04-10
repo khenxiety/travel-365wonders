@@ -1,1 +1,147 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import '~ngx-toastr/toastr';
+
+
+
+
+:root{
+    --red:#fd030f;
+    --blue:#03FDF1;
+
+    --text-dark:#191919;
+    --poppins: 'Poppins', sans-serif;
+
+    --raleway: 'Raleway', sans-serif;
+    --pacifico:'Pacifico', cursive;
+
+
+    --pd-large:180px;
+
+    --btn-radius:50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .5s;
+}
+
+body{
+    font-family: var(--raleway);
+    font-size: 16px;
+    position: relative;
+    background-color: #fab222;
+   
+}
+
+.sect-header{
+    display: grid;
+    place-items: center;
+    text-align: center;
+    gap: 15px;
+    h2{
+        font-weight: 400;
+        font-style: normal;
+        font-family: var(--raleway);
+        color: var(--text-dark);
+        font-size: 50px;
+        line-height: 1;
+        letter-spacing: 0px;
+    }
+    p{
+        font-weight: 400;
+    font-style: normal;
+    font-family: 'Raleway', sans-serif;
+    color: #6f6f6f;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    a{
+        color:var(--red);
+    }
+    }
+}
+
+.mat-shadow{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+
+    &:hover{
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+}
+
+
+
+section{
+    overflow: auto;
+}
+
+
+
+.swiper-container {
+    width: 100%;
+    height: 500px;
+    // margin: 50px auto;
+  }
+  
+  .swiper-slide {
+    background: transparent;
+    color: #000;
+    // text-align: center;
+    
+  }
+  
+.section2-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 80px 0;
+    
+
+    a{
+        color: var(--red);
+        font-weight: 500;
+    }
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .sect-header{
+        h2{
+            font-size: 35px;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+
+    :root{
+        --pd-large:80px;
+    }
+}
+
+    
+    

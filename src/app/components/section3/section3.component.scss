@@ -1,0 +1,171 @@
+section{
+    // padding-top: 4.3em;
+    // padding-bottom: 7em;
+    padding: var(--pd-large) 0;
+    position: relative;
+ 
+    background-color: white;
+
+    min-height: max-content;
+
+    overflow-x: hidden;
+    font-family: var(--raleway);
+}
+
+
+
+.row-header
+{
+    h3{
+        
+        font-weight: 600;
+        font-size: 1.9rem;
+        color: var(--text-dark);
+    }
+    p{
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: rgb(114, 114, 114);
+    }
+}
+
+
+
+.crd-img{
+    padding: 1em;
+}
+
+.custom-btn{
+    background-color: #fd030f;
+    color: white;
+    border: none;
+    
+    font-size: 1rem;
+    padding: .7em;
+    width: 200px;
+    border-radius: 50px;
+    transition: all 0.3s ease-out 0s;
+    
+}
+
+.cstm-card{
+    height: max-content;
+  
+    border: none;
+    padding: 3em;
+    
+}
+.card{
+    
+}
+.carousel{
+    position: relative;
+}
+
+
+
+.carousel-item{
+    padding: 0;
+}
+
+
+
+
+.custom-shape-divider-top-1647996788 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1647996788 svg {
+    position: relative;
+    display: block;
+    width: calc(134% + 1.3px);
+    height: 67px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1647996788 .shape-fill {
+    fill: #cacaca;
+}
+
+
+
+.card{
+    .card-desc{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(253, 253, 253, 0.705);
+    
+        transform: translateY(110%);
+
+        text-decoration: none;
+
+        display: grid;
+        place-items: center;
+
+        h3{
+            color: #1f1f1f;
+            // font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+
+        }
+        .view-button
+        {
+            display: grid;
+            place-items: center;
+            margin-top: 1em;
+        }
+    
+    
+    
+        
+    }
+
+    &:hover{
+
+        
+        .card-desc{
+            transform: translateY(0);
+           
+
+        }
+    }
+
+}
+.custom-shape-divider-top-1648391722 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1648391722 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 58px;
+}
+
+.custom-shape-divider-top-1648391722 .shape-fill {
+    fill: #ff0000;
+}
+
+
+@media (max-width:725px) {
+    section{
+        padding-top: 4.3em;
+    padding-bottom: 7em;
+    }
+    
+}
+

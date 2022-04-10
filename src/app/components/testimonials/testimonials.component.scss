@@ -1,0 +1,79 @@
+
+section
+{
+    padding-top: var(--pd-large);
+    padding-bottom: var(--pd-large);
+   
+    position: relative;
+    background-color: white;
+
+}
+
+
+
+.card {
+    border: none;
+    background-color: rgba(255, 241, 225, 0.719);
+    min-height: 200px;
+
+    
+}
+
+.user-content p {
+    margin-top: 5px;
+    font-size: 1rem;
+    position: relative;
+    font-style: italic;
+
+
+    
+}
+
+.ratings i {
+    color: blue;
+}
+
+
+
+
+.custom-shape-divider-bottom-1648104722 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1648104722 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1648104722 .shape-fill {
+    fill: #FF0000;
+}
+
+.custom-shape-divider-top-1648104790 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1648104790 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1648104790 .shape-fill {
+    fill: #FF0000;
+}
+
