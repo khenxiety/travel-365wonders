@@ -1,76 +1,5 @@
-<!-- <div class="d-flex flex-column flex-shrink-0 p-3  text-white bg-dark sidebar" style="width: 280px;">
-    
-      
-      <span class="fs-4 text-center">Admin Panel</span>
-    
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a routerLink="./dashboard" routerLinkActive="active" class="nav-link text-white" aria-current="page">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Dashboard
-        </a>
-      </li>
-      
-      <li>
-        <div class="accordion accordion-flush" id="accordionFlushExample" >
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-              <button class="accordion-button collapsed text-white" type="button" style="border: none; background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                Manage Posts
-              </button>
-            </h2>
-            <div
-          id="Utilities"
-          class="accordion-collapse collapse"
-          aria-labelledby="headingThree"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div class="accordion-body">
-            <li class="nav-item" routerLink="./manage-profile" routerLinkActive="active">
-              
-              <a class="nav-link " style="text-indent: 10px;">
-               
-                <span style="font-size: .9rem;">Manage Profile</span>
-              </a>
-            </li>
-            
-          </div>
-        </div>
-          </div>
-        </div>
 
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          Logs
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          Settings
-        </a>
-      </li>
-    </ul>
-    <hr>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>mdo</strong>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-       
-     
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
-      </ul>
-    </div>
-  </div> -->
-
-  <div
+<div
   class="side-bar d-flex flex-column flex-shrink-0 p-4 bg-dark text-white"
   style="width: 280px "
 >
@@ -120,7 +49,7 @@
                 <span style="font-size: .9rem;">All Posts Profile</span>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item"  routerLink="./add-posts" routerLinkActive="active">
               
               <a class="nav-link " style="text-indent: 10px;cursor: pointer;">
               
@@ -159,3 +88,4 @@
 
 
 </div>
+

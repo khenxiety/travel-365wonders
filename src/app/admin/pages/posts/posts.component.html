@@ -1,25 +1,165 @@
 <div class="main">
-    <div class="page-title d-flex align-items-center">
-        
-       
-       
-        <span> / All Posts</span>
-    </div>
-    <div class="container-fluid">
-        <div class="row ">
-        
-            <div class="col my-3" >
-              <div class="card w-100 " style="position: relative;">
-                  
-                    
-                    <div class="crd-body">
-                        
-                    </div>
-    
+  <div class="page-title d-flex align-items-center">
+    <span>Dashboard / Manage Posts / All Posts</span>
+  </div> 
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col my-3">
+        <div class="card w-100" style="position: relative">
+          <div class="crd-body">
+            <div class="search">
+              <div class="left d-flex align-items-center gap-3">
+                <button class="btn btn-primary">
+                  <i class="uil uil-filter"></i>
+                </button>
+
+                <div class="input-icon d-flex align-items-center">
+                  <i class="uil uil-search"></i>
+
+                  <input type="text" placeholder="Search" name="search" />
                 </div>
+              </div>
+              <div class="right">
+                <div class="buttons d-flex align-items-center gap-4">
+                  <button class="btn btn-success" (click)="redirectToAdd()">
+                    <i class="uil uil-plus-circle"></i>
+
+                    Add Post
+                  </button>
+                  
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <h3 style="color: rgb(117, 117, 117);">Posts</h3>
+    </div>
+
+    <div class="row my-2" *ngFor="let tour of tours">
+        <div class="col">
+            <div class="card w-100" >
+                <div class="crd-body">
+                    <div class="post-container">
+                        <div class="post-left d-flex">
+                            <div class="img">
+                                <img src="{{tour.image}}" height="100%" width="200px"  alt="">
+                                
+                            </div>
+                            <div class="text-wrapper" style="margin-left: 2em;">
+                                <p><i class="uil uil-location-point text-danger"></i>Destination: Laguna</p>
+                                <h5 class="h5-responsive">
+                                    {{tour.title}}
+                                </h5>
+                                <p>Ratings: {{tour.rating}}</p>
+                               
+                                <p> {{tour.description}}</p>
+
+
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#details">View all Details</button>
+    
+                            </div>
+
+                        </div>
+                        
+                        <div class="costs" style="margin-right: 2em;">
+                            <p><i class="uil uil-receipt text-danger"></i>from <strong>Php 30,999</strong> </p>
+                            <p><i class="uil uil-clock text-danger"></i> 4days-2nights</p>
+                            
+                            <p><i class="uil uil-telegram-alt text-danger"></i>Local</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="action-btns">
+                    <div class="left my-2">
+                        <button id="edit" data-bs-toggle="modal" data-bs-target="#editPost" class="btn btn-primary edit">
+                            <i class="uil uil-edit"></i>
+                    
+                        </button>
+                    </div>
+                    <div class="right">
+                        <button id="delete" (click)="deletePost(tour.id)" class="btn btn-danger delete">
+                            <i class="uil uil-trash-alt"></i>
+                       
+                        </button>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
     </div>
 
 
+
+
+
+  </div>
+</div>
+
+
+<div class="modal fade" id="addPost" tabindex="-1" aria-labelledby="addPost" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="editPost" tabindex="-1" aria-labelledby="editPost" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="details" tabindex="-1" aria-labelledby="details" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
 </div>

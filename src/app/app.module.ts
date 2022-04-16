@@ -40,8 +40,14 @@ import { PostsComponent } from './admin/pages/posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { PassportAppointmentComponent } from './pages/services-page/passport-appointment/passport-appointment.component';
+import { AddPostComponent } from './admin/pages/add-post/add-post.component';
 
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getAuth,provideAuth } from '@angular/fire/auth';
 
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+
+import { environment } from 'src/environments/environment';
 
 
 
@@ -74,7 +80,8 @@ import { PassportAppointmentComponent } from './pages/services-page/passport-app
     AdminLoginComponent,
     PostsComponent,
     AboutPageComponent,
-    PassportAppointmentComponent
+    PassportAppointmentComponent,
+    AddPostComponent
     
   ],
   imports: [
@@ -85,7 +92,11 @@ import { PassportAppointmentComponent } from './pages/services-page/passport-app
     CommonModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), 
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig )),
+    provideFirestore(() => getFirestore()),
+    provideAuth(()=>getAuth())
+    
     
   ],
   providers: [],

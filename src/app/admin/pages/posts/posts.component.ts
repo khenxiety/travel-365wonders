@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DummyServiceService } from 'src/app/dummy/dummy-service.service';
+import {Auth, createUserWithEmailAndPassword,signInWithEmailAndPassword} from '@angular/fire/auth'
+import {collection,addDoc,Firestore, getDocs} from '@angular/fire/firestore'
+
 
 @Component({
   selector: 'app-posts',
@@ -8,137 +13,115 @@ import { Component, OnInit } from '@angular/core';
 export class PostsComponent implements OnInit {
 
 
-  tours=[
-    {
-      id:1,
-      title:'Tagaytay Staycation',
-      price: 'P1,999',
-      img:'assets/tours/tour1.jpg',
-      description:"P1,999 lang per night, Tagaytay Staycation na yan! Oo, di ka namamalikmata, P1,999 nga!",
-      destination:'Tagaytay City',
-      rating:4.5,
-      days:"3 days-2 nights",
-      people:2,
-      departure:'May 15, 2020',
-      return:'May 18, 2020',
-      highlights:[
-        'Tagaytay City',
-        'Tagaytay Beach',
-        'Tagaytay National Park',
-        'Tagaytay Zoo',
-        'Tagaytay Museum',
-        'Tagaytay City',
-      ],
-      type:'Local tour'
+  tours:any;
 
+  tourist:any
 
+  public data:any=[]
 
-    },
-    {
-      id:2,
-      title:'2D1N BAGUIO Staycation',
-      price: ' P3,799 /person',
-      img:'assets/tours/tour2.jpg',
-      description:"Abot kayang 2D1N BAGUIO Private Tours for as low as PHP 3,799 /person",
-      destination:'Baguio City',
-      rating:4.5,
-      days:"2 days-1 nights",
-      people:9,
-      departure:'May 15, 2020',
-      return:'May 18, 2020',
-      highlights:[
-        'Baguio City',
-        'Baguio Beach',
-        'Baguio National Park',
-        'Baguio Zoo',
-        'Baguio Museum',
-        'Baguio City',
-      ],
-      type:'Local tour'
-      
-
-
-    },
-    {
-      id:3,
-      title:'4D3N BORACAY ALL IN PACKAGE',
-      price: 'P8,999 /person',
-      img:'assets/tours/tour3.jpg',
-      description:"Abot kayang 4D3N BORACAY ALL IN PACKAGE for as low as PHP 8,999 /person",
-      destination:'Boracay Island',
-      rating:4.5,
-      days:"4 days-3 nights",
-      people:1,
-      departure:'May 15, 2020',
-      return:'May 18, 2020',
-      highlights:[
-        'Baguio City',
-        'Baguio Beach',
-        'Baguio National Park',
-        'Baguio Zoo',
-        'Baguio Museum',
-        'Baguio City',
-      ],
-      type:'Local tour'
-      
-
-
-    },
-    {
-      id:4,
-      title:'Thailand Trip',
-      price: 'P8,999 /person',
-      img:'assets/tours/tour4.jpg',
-      description:"Abot kayang 4D3N BORACAY ALL IN PACKAGE for as low as PHP 8,999 /person",
-      destination:'Boracay Island',
-      rating:4.5,
-      days:"4 days-3 nights",
-      people:1,
-      departure:'May 15, 2020',
-      return:'May 18, 2020',
-      highlights:[
-        'Baguio City',
-        'Baguio Beach',
-        'Baguio National Park',
-        'Baguio Zoo',
-        'Baguio Museum',
-        'Baguio City',
-      ],
-      type:'International tour'
-      
-
-
-    },
-    {
-      id:5,
-      title:'Ilocos',
-      price: 'P8,999 /person',
-      img:'https://scontent.fmnl30-1.fna.fbcdn.net/v/t39.30808-6/276161930_1428594167577663_8841921417650499926_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeFYljWw96WQWWcPR5RlulLAOgqwb2RlBDg6CrBvZGUEOJ1JICUiFa1Xex9Za_FgGelGAammE0UXdNACiyFA-L8J&_nc_ohc=hvI6as1TfdYAX-yzSo1&_nc_ht=scontent.fmnl30-1.fna&oh=00_AT-zC8WJdyjVZNTLeIg-71mUTtV9lunNjldilI_Q5_5_tw&oe=62497FAD',
-      description:"Abot kayang 4D3N BORACAY ALL IN PACKAGE for as low as PHP 8,999 /person",
-      destination:'Boracay Island',
-      rating:4.5,
-      days:"4 days-3 nights",
-      people:1,
-      departure:'May 15, 2020',
-      return:'May 18, 2020',
-      highlights:[
-        'Baguio City',
-        'Baguio Beach',
-        'Baguio National Park',
-        'Baguio Zoo',
-        'Baguio Museum',
-        'Baguio City',
-      ],
-      type:'Local tour'
-      
-      
-
-
-    }
-  ]
-  constructor() { }
+  constructor(private dummy:DummyServiceService,private router:Router, private auth :Auth, private firestore:Firestore) { }
 
   ngOnInit(): void {
+    
+    // this.tours=this.dummy.getData()
+    // console.log(this.tours)
+    
+  
+    // this.sampleRegister()
+  
+  
+    
+    this.getPosts()
+    
+
+  
+  
+
   }
 
+
+  sampleRegister(){
+    // createUserWithEmailAndPassword(this.auth,'test@gmail.com','123456').then((res:any)=>{
+    //   console.log(res.user)
+    // })
+    // .catch((err:any)=>{
+    //   console.log(err.message)
+
+    // })
+
+    const dbinstance=collection(this.firestore,'posts')
+    let data={
+      
+      title:'KUALA LUMPUR Package',
+      price: 'PHP 14,200 /person',
+      image:'https://scontent.fmnl17-4.fna.fbcdn.net/v/t39.30808-6/277354941_1425365297900550_6400606129481221524_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeGDoogiLKhb-UB7QJV2wG07uT1cCEcY5zm5PVwIRxjnOXWcFp7cJiQ6f8a0ovFF1BryV9K_TXiuo9q9BkCyffNf&_nc_ohc=93O2bdDsGpoAX_5ZLcR&_nc_ht=scontent.fmnl17-4.fna&oh=00_AT9zQ__ertfCr3juiC1MZukdKqAu6biqYgL2UACYp5wntw&oe=624EC725',
+      description:'4D3N KUALA LUMPUR W/ GENTING HIGHLAND for as low as PHP 14,200 /person',
+      location:'Malaysia',
+      
+      days:"4 days-3 nights",
+      people:9,
+      departure:'Apr 1 , 2022',
+      return:'Apr 4, 2022',
+      
+      category:'international',
+      facebookpost:"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ftravelby365wonders%2Fposts%2F1425365841233829&show_text=true&width=500"
+    }
+
+
+
+    addDoc(dbinstance,data).then(
+      (res:any)=>{
+        console.log(res)
+      }
+    ).catch((err:any)=>{
+      console.log(err.message)
+    })
+
+
+   
+  }
+  getPosts(){
+    const dbinstance=collection(this.firestore,'posts');
+    getDocs(
+      dbinstance,
+    ).then((res:any)=>{
+      // console.log(res.docs.map((doc:any)=>{
+      //   return {...doc.data(),id:doc.id}
+      // }))
+      this.tours=[...res.docs.map((doc:any)=>{
+        return {...doc.data(),id:doc.id}
+      })]
+      console.log(this.tours)
+    }).catch((err:any)=>{
+      console.log(err.message)
+    })
+
+
+  }
+
+  
+
+
+
+
+  openDelete(){
+    const del=document.getElementById('delete')!;
+    del.classList.toggle('open');
+  }
+  openEdit(){
+    const edit=document.getElementById('edit')!;
+    edit.classList.toggle('open');
+  }
+
+
+  deletePost(id:any){
+    this.dummy.delete(id);
+    this.ngOnInit()
+
+  }
+
+  redirectToAdd(){
+    this.router.navigate(['/admin/add-posts'])
+
+  }
 }
