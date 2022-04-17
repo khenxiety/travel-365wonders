@@ -19,6 +19,8 @@ import SwiperCore , {
 } from 'swiper';
 import { BehaviorSubject } from "rxjs";
 import { DummyServiceService } from 'src/app/dummy/dummy-service.service';
+import {collection,addDoc,Firestore, getDocs} from '@angular/fire/firestore'
+
 
 SwiperCore.use([
   Navigation,
@@ -46,28 +48,47 @@ export class Section3Component implements OnInit {
   international:any;
   local:any;
 
-  constructor(private router: Router,private cd: ChangeDetectorRef, private ngZone: NgZone,private dummy:DummyServiceService) { }
+  constructor(private router: Router,private cd: ChangeDetectorRef, private ngZone: NgZone,private dummy:DummyServiceService,private firestore:Firestore) { }
 
   ngOnInit(): void {
 
     const slide = document.getElementById('mySwiperID')!;
-    this
+    
 
-    this.tours=this.dummy.getData();
+    // this.tours=this.dummy.getData();
     // filter tours by category
-    this.international=this.tours.filter((tour:any)=>tour.category=='international');
+    
+
+
+    this.getPosts()
+   
+
+  }
+  getPosts(){
+    const dbinstance=collection(this.firestore,'posts');
+    getDocs(
+      dbinstance,
+    ).then((res:any)=>{
+     
+      this.tours=[...res.docs.map((doc:any)=>{
+        return {...doc.data(),id:doc.id}
+      })]
+      console.log(this.tours)
+      this.international=this.tours.filter((tour:any)=>tour.category=='international');
     this.local=this.tours.filter((tour:any)=>tour.category=='local');
 
 
 
+     
+     
+    }).catch((err:any)=>{
+      console.log(err.message)
+    })
+
     
-   
-
   }
 
-  test(){
-    console.log("test");
-  }
+  
 
 
   details(data:any){

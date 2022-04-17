@@ -65,10 +65,10 @@
                         </div>
                         
                         <div class="costs" style="margin-right: 2em;">
-                            <p><i class="uil uil-receipt text-danger"></i>from <strong>Php 30,999</strong> </p>
-                            <p><i class="uil uil-clock text-danger"></i> 4days-2nights</p>
+                            <p><i class="uil uil-receipt text-danger"></i>from <strong>{{tour.price}}</strong> </p>
+                            <p><i class="uil uil-clock text-danger"></i>{{tour.days}}</p>
                             
-                            <p><i class="uil uil-telegram-alt text-danger"></i>Local</p>
+                            <p><i class="uil uil-telegram-alt text-danger"></i>{{tour.category}}</p>
 
                         </div>
                     </div>
@@ -77,7 +77,7 @@
 
                 <div class="action-btns">
                     <div class="left my-2">
-                        <button id="edit" data-bs-toggle="modal" data-bs-target="#editPost" class="btn btn-primary edit">
+                        <button id="edit" (click)="singlePost(tour.id)" data-bs-toggle="modal" data-bs-target="#editPost" class="btn btn-primary edit">
                             <i class="uil uil-edit"></i>
                     
                         </button>
@@ -107,38 +107,203 @@
 </div>
 
 
-<div class="modal fade" id="addPost" tabindex="-1" aria-labelledby="addPost" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-</div>
 
 
 <div class="modal fade" id="editPost" tabindex="-1" aria-labelledby="editPost" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col mb-md-0 mb-5">
+                <div class="card p-4">
+                  <form id="contact-form" name="contact-form">
+                    <div class="row my-2">
+                      <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            class="form-control capitalize"
+                            [(ngModel)]="title"
+                          />
+                          <label for="title" class="label">Title</label>
+                        </div>
+                      </div>
+                      <br />
+                      <br />
+        
+                      <br />
+        
+                      <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="price"
+                            name="price"
+                            class="form-control capitalize"
+                            value="Php "
+                            [(ngModel)]="price"
+                          />
+                          <label for="price" class="">Price</label>
+                        </div>
+                      </div>
+                    </div>
+        
+                    <div class="row my-2">
+                      <div class="col-md-3">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            class="form-control capitalize"
+                            [(ngModel)]="location"
+                          />
+                          <label for="location" class="">Location</label>
+                        </div>
+                      </div>
+                    </div>
+        
+                    <div class="row my-2">
+                      <div class="col-md-3">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="days"
+                            name="days"
+                            class="form-control capitalize"
+                            [(ngModel)]="days"
+                          />
+                          <label for="days" class="">Days</label>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="people"
+                            name="people"
+                            class="form-control capitalize"
+                            [(ngModel)]="people"
+                          />
+                          <label for="people" class="">Max People</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row my-2">
+                      <div class="col-md-3">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="departure"
+                            name="departure"
+                            class="form-control capitalize"
+                            [(ngModel)]="departure"
+                          />
+                          <label for="departure" class="">Promo Start</label>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="return"
+                            name="return"
+                            class="form-control capitalize"
+                            [(ngModel)]="return"
+                          />
+                          <label for="return" class="">Promo Ends</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row my-2">
+                      <div class="col-md-3">
+                        <div class="md-form">
+                          <select
+                            name="category"
+                            [(ngModel)]="category"
+                            class="form-select capitalize"
+                            id="category"
+                          >
+                            <option value="" selected>Choose</option>
+                            <option value="local">Local</option>
+        
+                            <option value="international">International</option>
+                          </select>
+                          <label for="message">Category</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row my-2">
+                      <div class="col-md-12">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="image"
+                            name="image"
+                            class="form-control"
+                            [(ngModel)]="image"
+        
+                          />
+                          <label for="image" class=""
+                            >Image
+                            <span class="text-muted">(Provide the image url)</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row my-2">
+                      <div class="col-md-12">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="facebookpost"
+                            name="facebookpost"
+                            class="form-control"
+                            [(ngModel)]="facebookpost"
+                          />
+                          <label for="facebookpost" class=""
+                            >Social Media Post
+                            <span class="text-muted">(Provide the post url)</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row my-2">
+                      <div class="col-md-12">
+                        <div class="md-form">
+                          <textarea
+                            type="text"
+                            id="description"
+                            name="description"
+                            rows="3"
+                            class="form-control md-textarea capitalize"
+                            [(ngModel)]="description"
+                          ></textarea>
+                          <label for="description">Description</label>
+                        </div>
+                      </div>
+                    </div>
+        
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button (click)="updatePost()" type="button" data-bs-dismiss="modal" class="btn btn-primary">
+            Save Changes
+          </button>
         </div>
       </div>
     </div>

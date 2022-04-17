@@ -3,6 +3,8 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { DummyServiceService } from 'src/app/dummy/dummy-service.service';
 import { ApiService } from 'src/app/services/api.service';
+import {collection,addDoc,Firestore, getDocs} from '@angular/fire/firestore'
+
 
 @Component({
   selector: 'app-tours-page',
@@ -20,7 +22,7 @@ export class ToursPageComponent implements OnInit {
   tourists:any;
   tours:any
 
-  constructor(private dummy:DummyServiceService,private title: Title, private router :Router,private api:ApiService) { }
+  constructor(private dummy:DummyServiceService,private title: Title, private router :Router,private api:ApiService,private firestore:Firestore) { }
 
   ngOnInit(): void {
     window.scroll({ 
@@ -31,7 +33,7 @@ export class ToursPageComponent implements OnInit {
 
 
 
-    this.tours=this.dummy.getData()
+    // this.tours=this.dummy.getData()
     this.getPosts();
     
 
@@ -58,36 +60,43 @@ export class ToursPageComponent implements OnInit {
 
 
 
-  getPosts(){
-    // this.api.getPosts().subscribe(
-    //   res=>{
-    //     console.log(res)
-    //     this.apiTour=res;
-    //     this.tourists=this.tours;
-        
-        
-        
-       
+  // getPosts(){
+  
+  //   this.tourists=this.tours;
 
-    //   },
-    //   err=>{
-    //     console.log(err);
-    //   }
-    // )
-    this.tourists=this.tours;
+  // }
+  getPosts(){
+    const dbinstance=collection(this.firestore,'posts');
+    getDocs(
+      dbinstance,
+    ).then((res:any)=>{
+      // console.log(res.docs.map((doc:any)=>{
+      //   return {...doc.data(),id:doc.id}
+      // }))
+      this.tours=[...res.docs.map((doc:any)=>{
+        return {...doc.data(),id:doc.id}
+      })]
+      console.log(this.tours)
+    }).catch((err:any)=>{
+      console.log(err.message)
+    })
+
+
+ 
+
 
   }
 
 
   search(){
-    // filter by search
+  
 
     if(this.searchResult==""){
       this.getPosts();
       this.searchActive=false;
     }
     else{
-      this.tourists=this.tourists.filter((tour: any)=>{
+      this.tours=this.tours.filter((tour: any)=>{
       
         return tour.title.toLowerCase().includes(this.searchResult.toLowerCase())
       }

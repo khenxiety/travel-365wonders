@@ -145,9 +145,10 @@ let data:any ={
       emailjs.send('service_qhjhmhr', 'template_fz2wru5',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
       console.log(result.text);
       
+      
       window.location.reload();
       
-      this.toast.success('Your request has been sent', 'Success');
+      this.toast.success('Your appointment has been sent', 'Success');
 
 
     }, (error) => {

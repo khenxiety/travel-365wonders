@@ -74,10 +74,12 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3  my-5">
 
         
-        <div class="col my-3" *ngFor="let test of tourists ">
-        <h5 *ngIf="searchActive==true" class="h5-responsive mb-4">Search Result: </h5>
+        <div class="col my-3"  *ngFor="let test of tours " >
+          <h5 *ngIf="searchActive==true" class="h5-responsive mb-4">Search Result: </h5>
+          
+
         
-          <div data-aos="fade-up"
+          <div  data-aos="fade-up"
             data-aos-duration="2000" class="card" style="position: relative;">
               
               <img class="card-img-top" src="{{ test.image }}" height="60%" alt="Card image cap">

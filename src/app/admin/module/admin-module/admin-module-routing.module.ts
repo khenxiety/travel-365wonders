@@ -23,7 +23,7 @@ const routes: Routes = [
       }, 
       {
         path: '',
-        redirectTo: '/admin/dashboard',
+        redirectTo: '/admin/posts',
         pathMatch: 'full'
       }
     ]

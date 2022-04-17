@@ -6,6 +6,8 @@ import { ApiService } from 'src/app/services/api.service';
 import emailjs, { EmailJSResponseStatus, init } from '@emailjs/browser';
 import {DomSanitizer,SafeResourceUrl,} from '@angular/platform-browser';
 import { DummyServiceService } from 'src/app/dummy/dummy-service.service';
+import {collection,addDoc,Firestore, getDocs} from '@angular/fire/firestore'
+
 
 init("user_2OS84QxjMn43nqkQifnJH");
 
@@ -63,7 +65,7 @@ export class TourDetailsComponent implements OnInit {
  
   url: SafeResourceUrl | undefined;
 
-  constructor(private dummy:DummyServiceService,private route:Router,private activated:ActivatedRoute, private title:Title,private toastr:ToastrService,private api:ApiService,public sanitizer:DomSanitizer) { 
+  constructor(private dummy:DummyServiceService,private route:Router,private activated:ActivatedRoute, private title:Title,private toastr:ToastrService,private api:ApiService,public sanitizer:DomSanitizer,private firestore:Firestore,) { 
 
     this.id=this.activated.snapshot.paramMap.get('id');
      console.log(this.id)
@@ -71,57 +73,42 @@ export class TourDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.title.setTitle('365Wonders | ' +"Details")
+
     window.scroll({ 
       top: 0, 
       left: 0
     });
-
-    this.tours=this.dummy.getData();
-
-
-
     
-    this.toursFiltered=this.tours.filter((tour:any)=>tour.id==this.id)
-
-    this.tourists=this.toursFiltered[0];
-    console.log(this.tourists)
-    this.destination=this.tourists.location;
-    this.package=this.tourists.title;
-
-
-    this.title.setTitle('365Wonders | ' +"Details")
-
+    
+    
+    
     this.getPosts();
-
-    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.tourists.facebookpost);  
-    console.log(this.url)
-
-
   }
   getPosts(){
-
-    // const test="62494635e9e444c0f1c89fbc"
-    // this.api.getIndividualPost(this.id).subscribe(
-    //   res=>{
-    //     console.log(res)
-    //     this.apiTour=res;
-    //     this.tourists=this.apiTour.post;
-
-
-    //     console.log(this.tourists)
-    //     this.destination=this.tourists.location;
+    const dbinstance=collection(this.firestore,'posts');
+    getDocs(
+      dbinstance,
+    ).then((res:any)=>{
+     
+      this.tours=[...res.docs.map((doc:any)=>{
+        return {...doc.data(),id:doc.id}
+      })]
+      console.log(this.tours)
 
 
-        
-        
-        
-       
+      this.toursFiltered=this.tours.filter((tour:any)=>tour.id==this.id)
+    
+      this.package=this.toursFiltered[0].title;
+      this.destination=this.toursFiltered[0].location;
 
-    //   },
-    //   err=>{
-    //     console.log(err);
-    //   }
-    // )
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.toursFiltered[0].facebookpost);  
+     
+    }).catch((err:any)=>{
+      console.log(err.message)
+    })
+
+    
   }
 
   showSuccess(){
@@ -230,7 +217,7 @@ export class TourDetailsComponent implements OnInit {
           mobile: this.mobile_no,
           email_add: this.email,
           message:this.messages,
-          package:this.tourists.title,
+          package:this.package,
         }
         
         emailjs.send('service_qhjhmhr', 'template_gfc4aq8',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
@@ -253,27 +240,7 @@ export class TourDetailsComponent implements OnInit {
           console.log(error.text);
           this.toastr.error('Something went wrong', 'Error');
         });
-        // emailjs.send('service_2hem73b', 'template_oeby71o',data).then((res) =>{
-        //     console.log("success", res.status)
-        //     this.showSuccess()
-
-           
-        //     this.fullname="";
-        //     this.email="";
-        //     this.mobile_no="";
-        //     this.tel_no="";
-        //     this.destination="";
-        //     this.departure_date="";
-        //     this.return_date="";
-        //     this.messages="";
-        //     this.adult=0;
-        //     this.child=0;
-        //     this.infants=0;
-
-        // }, (err) => {
-        //     console.log("error", err)
-            
-        // })
+        
 
     }
 

@@ -17,23 +17,23 @@
   <div class="container">
     
 
-    <div class="row">
+    <div class="row" *ngFor="let dt of toursFiltered">
       <div class="col-md-8" style="">
         <div class="tour-container">
           <div class="tour-header" >
             <div class="left-item">
-              <h2 class="h2-responsive">{{tourists.title}}</h2>
+              <h2 class="h2-responsive">{{dt.title}}</h2>
 
               <p style="margin: 0;">
                 <i class="uil uil-location-point" style="color: var(--red)"></i>
-                {{tourists.location}}
+                {{dt.location}}
               </p>
             </div>
             <div class="right-item">
 
                 <div class="rating">
 
-                    <h5>Ratings: {{ tourists.rating }}</h5>
+                    <h5>Ratings: {{ dt.rating }}</h5>
                   
 
                 </div>
@@ -48,14 +48,14 @@
                   <i class="uil uil-clock"></i>
                   <div class="details-container">
                     <h5>Duration</h5>
-                    <p>{{tourists.days}}</p>
+                    <p>{{dt.days}}</p>
                   </div>
                 </div>
                 <div class="col flex">
                   <i class="uil uil-ship"></i>
                   <div class="details-container">
                     <h5>Tour Type</h5>
-                    <p>{{tourists.category}}</p>
+                    <p>{{dt.category}}</p>
                   </div>
                 </div>
 
@@ -63,18 +63,18 @@
                   <i class="uil uil-users-alt"></i>
                   <div class="details-container">
                     <h5>Group Size</h5>
-                    <p>{{tourists.people}}</p>
+                    <p>{{dt.people}}</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="tour-image">
-            <img src="{{tourists.image}}" alt="" />
+            <img src="{{dt.image}}" alt="" />
           </div>
           <div class="tour-m-details">
               <div class="text-wrap">
-                  <p>{{tourists.description}}</p>
+                  <p>{{dt.description}}</p>
               </div>
               <div class="text-wrap">
                 <h5>Package Inclusions:</h5>
@@ -122,7 +122,7 @@
       <div class="col" style="">
         <div class="form-card">
           <div class="form-header">
-            <h3 class="h3-responsive">from {{ tourists.price }}</h3>
+            <h3 class="h3-responsive">from {{ dt.price }}</h3>
           </div>
           <div class="form-header2">
             <h5 class="h3-responsive">Fill-up the Form to Book</h5>
@@ -166,8 +166,8 @@
               <div class="form-group">
                 <input
                   type="text"
-                  id="mobile"
-                  name="mobile"
+                  id="tel_no"
+                  name="tel_no"
                   class="form-control"
                   placeholder="4**-****-****"
                   [(ngModel)]="tel_no"
@@ -194,6 +194,7 @@
                   class="form-control"
                   placeholder="Enter your destination"
                   [(ngModel)]="package"
+                  
                 />
                 <label for="subject" class="">Tour Package</label>
               </div>
@@ -204,10 +205,10 @@
                       type="datetime-local"
                       class="form-control"
                       [(ngModel)]="departure_date"
-                      id="birthdaytime"
-                      name="date"
+                      id="departure_date"
+                      name="departure_date"
                     />
-                    <label for="birthdaytime" class="">Departure Date</label>
+                    <label for="departure_date" class="">Departure Date</label>
                   </div>
 
                   <div class="">
@@ -215,10 +216,10 @@
                       type="datetime-local"
                       [(ngModel)]="return_date"
                       class="form-control"
-                      id="birthdaytime"
-                      name="birthdaytime"
+                      id="return_date"
+                      name="return_date"
                     />
-                    <label for="birthdaytime" class="">Return Date*</label>
+                    <label for="return_date" class="">Return Date*</label>
                   </div>
                 
               </div>
