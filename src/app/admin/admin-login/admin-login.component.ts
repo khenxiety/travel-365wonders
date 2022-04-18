@@ -20,7 +20,11 @@ export class AdminLoginComponent implements OnInit {
 
   onSubmit(){
     signInWithEmailAndPassword(this.auth,this.email,this.password).then((res:any)=>{
-      console.log(res.user)
+      
+      localStorage.setItem('token',res.user.accessToken)
+
+
+
       this.toast.success('Login Successful')
       this.router.navigate(['/admin']);
 
@@ -28,6 +32,18 @@ export class AdminLoginComponent implements OnInit {
     .catch((err:any)=>{
       console.log(err)
       this.toast.error('Login Failed',err.message)
+
+    })
+
+  }
+
+
+  signUp(){
+    createUserWithEmailAndPassword(this.auth,this.email,this.password).then((res:any)=>{
+      console.log(res.user)
+    })
+    .catch((err:any)=>{
+      console.log(err.message)
 
     })
 

@@ -10,6 +10,8 @@ import { ServicesPageComponent } from './pages/services-page/services-page.compo
 import { TourDetailsComponent } from './pages/tour-details/tour-details.component';
 import { ToursPageComponent } from './pages/tours-page/tours-page.component';
 
+import { AuthGuardService as AuthGuard } from './services/auth/auth-guard.service';
+
 
 
 const routes: Routes = [
@@ -49,7 +51,8 @@ const routes: Routes = [
   
   {
     path: 'admin',
-    loadChildren: () => import('./admin/module/admin-module/admin-module.module').then(m => m.AdminModuleModule)
+    loadChildren: () => import('./admin/module/admin-module/admin-module.module').then(m => m.AdminModuleModule),
+    canActivate: [AuthGuard]
   },
 
 

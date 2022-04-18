@@ -38,6 +38,9 @@ export class PostsComponent implements OnInit {
   facebookpost:any
 
   postId:any
+  searchResult: any;
+
+  modalTitle:any;
 
   constructor(private dummy:DummyServiceService,private router:Router, private auth :Auth, private firestore:Firestore,private toast:ToastrService ) { }
 
@@ -59,41 +62,6 @@ export class PostsComponent implements OnInit {
     //   console.log(err.message)
 
     // })
-
-    const dbinstance=collection(this.firestore,'posts')
-    let data={
-    
-      title:'Ilocos',
-      price: 'P8,999 /person',
-      image:'https://scontent.fmnl30-1.fna.fbcdn.net/v/t39.30808-6/276161930_1428594167577663_8841921417650499926_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeFYljWw96WQWWcPR5RlulLAOgqwb2RlBDg6CrBvZGUEOJ1JICUiFa1Xex9Za_FgGelGAammE0UXdNACiyFA-L8J&_nc_ohc=hvI6as1TfdYAX-yzSo1&_nc_ht=scontent.fmnl30-1.fna&oh=00_AT-zC8WJdyjVZNTLeIg-71mUTtV9lunNjldilI_Q5_5_tw&oe=62497FAD',
-      description:"Abot kayang 4D3N BORACAY ALL IN PACKAGE for as low as PHP 8,999 /person",
-      location:'Boracay Island',
-   
-      days:"4 days-3 nights",
-      people:1,
-      departure:'May 15, 2020',
-      return:'May 18, 2020',
-    
-      category:'local',
-      facebookpost:'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ftravelby365wonders%2Fposts%2F1428596154244131&show_text=true&width=500'
-
-      
-      
-
-
-    }
-
-
-
-    addDoc(dbinstance,data).then(
-      (res:any)=>{
-        console.log(res)
-        this.toast.success('Post Added');
-        this.ngOnInit()
-      }
-    ).catch((err:any)=>{
-      console.log(err.message)
-    })
 
 
    
@@ -130,10 +98,24 @@ export class PostsComponent implements OnInit {
       console.log(err.message)
     })
   }
+  search() {
+    if (this.searchResult == '') {
+      this.getPosts();
+      // this.searchActive = false;
+    } else {
+      this.tours = this.tours.filter((tour: any) => {
+        return tour.title
+          .toLowerCase()
+          .includes(this.searchResult.toLowerCase());
+      });
+      // this.searchActive = true;
+    }
+  }
 
 
   singlePost(id:any){
     this.singleData=this.tours.filter((tour:any)=>tour.id==id)
+    this.modalTitle=this.singleData[0].title
 
     this.title=this.singleData[0].title
     this.price=this.singleData[0].price

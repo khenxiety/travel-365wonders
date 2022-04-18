@@ -68,7 +68,7 @@ export class TourDetailsComponent implements OnInit {
   constructor(private dummy:DummyServiceService,private route:Router,private activated:ActivatedRoute, private title:Title,private toastr:ToastrService,private api:ApiService,public sanitizer:DomSanitizer,private firestore:Firestore,) { 
 
     this.id=this.activated.snapshot.paramMap.get('id');
-     console.log(this.id)
+   
 
   }
 
@@ -94,7 +94,7 @@ export class TourDetailsComponent implements OnInit {
       this.tours=[...res.docs.map((doc:any)=>{
         return {...doc.data(),id:doc.id}
       })]
-      console.log(this.tours)
+  
 
 
       this.toursFiltered=this.tours.filter((tour:any)=>tour.id==this.id)
@@ -199,7 +199,7 @@ export class TourDetailsComponent implements OnInit {
     }
 
     addToCart(){
-      console.log("Child: "+this.child+" Adults: "+this.adult+" Infants "+this.infants)
+      
 
       const departure= new Date(this.departure_date);
       const return_date= new Date(this.return_date);
@@ -220,7 +220,7 @@ export class TourDetailsComponent implements OnInit {
           package:this.package,
         }
         
-        emailjs.send('service_qhjhmhr', 'template_gfc4aq8',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
+        emailjs.send('service_qhjhmhr', 'template_wezpi2e',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
           console.log(result.text);
           this.fullname='';
           this.tel_no='';

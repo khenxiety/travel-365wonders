@@ -62,7 +62,7 @@
         <div class="col">
           <div class="filter-button" style="display: flex; justify-content: right;">
             
-              <button class="btn " style="background-color: var(--red); color: white;" (click)="print()"><i class="uil uil-filter"></i> Filter</button>
+              <button class="btn " style="background-color: var(--red); color: white;" data-bs-toggle="modal" data-bs-target="#filter" ><i class="uil uil-filter"></i> Filter</button>
             </div>
          
         </div>
@@ -137,16 +137,16 @@
       </div>
       <div class="modal-body">
         <label for="category">Category</label>
-        <select class="form-control" id="category">
-          <option>All</option>
-          <option>Category 1</option>
-          <option>Category 2</option>
-          <option>Category 3</option>
+        <select class="form-control" id="category" [(ngModel)]="filtered">
+          <option value="all" selected>All</option>
+          <option value="international">International</option>
+          <option value="local">Local</option>
+         
         </select>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Filter</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="filter()">Filter</button>
       </div>
     </div>
   </div>

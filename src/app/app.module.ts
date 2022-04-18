@@ -48,6 +48,11 @@ import { getAuth,provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 import { environment } from 'src/environments/environment';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 
 
 
@@ -95,7 +100,13 @@ import { environment } from 'src/environments/environment';
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig )),
     provideFirestore(() => getFirestore()),
-    provideAuth(()=>getAuth())
+    provideAuth(()=>getAuth()),
+    JwtModule.forRoot({
+      config:{
+        tokenGetter: tokenGetter
+        
+      }
+    }),
     
     
   ],

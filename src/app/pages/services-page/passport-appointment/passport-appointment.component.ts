@@ -142,7 +142,7 @@ let data:any ={
       }
 
 
-      emailjs.send('service_qhjhmhr', 'template_fz2wru5',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
+      emailjs.send('service_qhjhmhr', 'template_i2gra79',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
       console.log(result.text);
       
       

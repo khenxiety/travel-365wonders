@@ -73,52 +73,50 @@ export class BookingComponent implements OnInit {
   }
 
 
-  sendMail(){
-    
+  addToCart(){
+      
+
     const departure= new Date(this.departure_date);
     const return_date= new Date(this.return_date);
+  
     
+      // this.messages="Im requesting to reset my password. Email me at"+this.email;
+      let data={
+        from_name: this.fullname,
+        full_name: this.fullname,
+        dates: "From "+departure.toDateString()+" to "+return_date.toDateString(),
+        destination: this.destination,
+        no_person: this.adult+" Adult "+this.child+" Child "+this.infants+" Infants ",
+        telephone:this.tel_no,
+
+        mobile: this.mobile_no,
+        email_add: this.email,
+        message:this.messages,
+        
+      }
       
-        // this.messages="Im requesting to reset my password. Email me at"+this.email;
-        let data={
-          from_name: this.fullname,
-          full_name: this.fullname,
-          dates: "From "+departure.toDateString()+" to "+return_date.toDateString(),
-          destination: this.destination,
-          no_person: this.adult+" Adult "+this.child+" Child "+this.infants+" Infants ",
-          telephone:this.tel_no,
-
-          mobile: this.mobile_no,
-          email_add: this.email,
-          message:this.messages
-        }
-        console.log(data)
-        emailjs.send('service_2hem73b', 'template_oeby71o',data).then((res) =>{
-            console.log("success", res.status)
-            this.showSuccess(res.status);
-
-           
-            this.fullname="";
-            this.email="";
-            this.mobile_no="";
-            this.tel_no="";
-            this.destination="";
-            this.departure_date="";
-            this.return_date="";
-            this.messages="";
-            this.adult=0;
-            this.child=0;
-            this.infants=0;
-
-        }, (err) => {
-            console.log("error", err)
-            this.showError();
-        })
-
+      emailjs.send('service_qhjhmhr', 'template_wezpi2e',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
+        console.log(result.text);
+        this.fullname='';
+        this.tel_no='';
+        this.mobile_no='';
+        this.email='';
+        this.departure_date='';
+        this.return_date='';
+        this.messages='';
        
+        
+       
+        
+        this.toastr.success('Your request has been sent', 'Success');
+  
+  
+      }, (error) => {
+        console.log(error.text);
+        this.toastr.error('Something went wrong', 'Error');
+      });
       
-      
-    
+
   }
 
   onChange(){

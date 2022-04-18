@@ -16,7 +16,7 @@
                 <div class="input-icon d-flex align-items-center">
                   <i class="uil uil-search"></i>
 
-                  <input type="text" placeholder="Search" name="search" />
+                  <input type="text" placeholder="Search" (keyup)="search()" name="search" [(ngModel)]="searchResult" />
                 </div>
               </div>
               <div class="right">
@@ -58,7 +58,7 @@
                                 <p> {{tour.description}}</p>
 
 
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#details">View all Details</button>
+                                <button type="button" class="btn btn-primary" (click)="singlePost(tour.id)" data-bs-toggle="modal" data-bs-target="#editPost">View all Details</button>
     
                             </div>
 
@@ -113,7 +113,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">{{modalTitle}}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">

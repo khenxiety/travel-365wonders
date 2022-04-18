@@ -65,7 +65,7 @@ export class AddPostComponent implements OnInit {
 
     addDoc(dbinstance,data).then(
       (res:any)=>{
-        console.log(res)
+        // console.log(res)
         this.toast.success('Post Added');
         this.ngOnInit()
 

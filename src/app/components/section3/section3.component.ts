@@ -55,8 +55,7 @@ export class Section3Component implements OnInit {
     const slide = document.getElementById('mySwiperID')!;
     
 
-    // this.tours=this.dummy.getData();
-    // filter tours by category
+   
     
 
 
@@ -73,9 +72,9 @@ export class Section3Component implements OnInit {
       this.tours=[...res.docs.map((doc:any)=>{
         return {...doc.data(),id:doc.id}
       })]
-      console.log(this.tours)
+     
       this.international=this.tours.filter((tour:any)=>tour.category=='international');
-    this.local=this.tours.filter((tour:any)=>tour.category=='local');
+      this.local=this.tours.filter((tour:any)=>tour.category=='local');
 
 
 
@@ -94,7 +93,6 @@ export class Section3Component implements OnInit {
   details(data:any){
     this.router.navigate(['/tours/tour-details',data.id])
 
-    console.log(data);
 
   }
   @ViewChild('swiperRef', { static: false }) swiperRef?: SwiperComponent;
