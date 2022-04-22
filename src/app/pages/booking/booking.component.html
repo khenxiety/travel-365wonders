@@ -31,6 +31,52 @@
     <div class="row">
       <div class="col-md-9 mb-md-0 mb-5">
         <form id="contact-form" name="contact-form">
+          <div class="row my-3">
+            <div class="col-md-3">
+              <div class="md-form mb-0">
+                <select
+                class="form-select"
+                [(ngModel)]="subject"
+                name="subject"
+                id="subject"
+                (click)="type()"
+      
+                
+              >
+                <option selected>Select</option>
+                <option value="Flight">Flight</option>
+                <option value="Tour Package">Tour Package</option>
+              </select>
+      
+              </div>
+            </div>
+            
+            
+            <label for="appointmentFor">Booking type:</label>
+          </div>
+          <div class="row " id="package">
+            <div class="col-md-3">
+              <div class="md-form mb-0">
+                <select
+                class="form-select"
+                [(ngModel)]="package"
+                name="package"
+                (click)="tourDest()"
+                
+      
+                
+              >
+                <option selected>Select</option>
+                <option *ngFor="let tour of tours" value="{{tour.title}}">{{tour.title}}</option>
+               
+              </select>
+      
+              </div>
+            </div>
+            
+            
+            <label for="package">Select Package:</label>
+          </div>
           <div class="row my-4">
             <div class="col-md-6">
               <div class="md-form mb-0">
@@ -100,13 +146,13 @@
               <div class="md-form mb-0">
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
+                  id="destination"
+                  name="destination"
                   class="form-control"
                   placeholder="Enter your destination"
                   [(ngModel)]="destination"
                 />
-                <label for="subject" class="">Destination</label>
+                <label for="destination" class="">Destination</label>
               </div>
             </div>
           </div>
@@ -117,8 +163,8 @@
                   type="datetime-local"
                   class="form-control"
                   [(ngModel)]="departure_date"
-                  id="birthdaytime"
-                  name="date"
+                  id="departure_date"
+                  name="departure_date"
                 />
                 <label for="birthdaytime" class="">Departure Date</label>
               </div>
@@ -129,10 +175,10 @@
                   type="datetime-local"
                   [(ngModel)]="return_date"
                   class="form-control"
-                  id="birthdaytime"
-                  name="birthdaytime"
+                  id="return_date"
+                  name="return_date"
                 />
-                <label for="birthdaytime" class="">Return Date*</label>
+                <label for="return_date" class="">Return Date*</label>
               </div>
             </div>
           </div>
@@ -156,11 +202,7 @@
                 <label for="adult" class="text-muted">Adult (12+)</label>
 
                 <label for="adult" class=""
-                  >No. of Person (max number: 9 out of<span
-                    style="color: var(--red); font-weight: 600"
-                  >
-                    {{ max }}</span
-                  >
+                  >No. of Person (max number: 9 
                   ) {{ maxmessage }}</label
                 >
               </div>
@@ -225,7 +267,9 @@
       </div>
 
       <div class="col-md-3 text-center">
-        <h4 class="h4-responsive">365 Wonders Address and contact</h4>
+
+        <img src="assets/wonders/xxxxxx.png" height="auto" width="300px" alt="">
+        <h4 class="h4-responsive my-3">Address and contact</h4>
         <ul class="list-unstyled mb-0">
           <li>
             <i class="uil uil-map-pin-alt"></i>
@@ -245,35 +289,21 @@
             <p><a href="">reservations@365wonders.com</a></p>
           </li>
         </ul>
+        <div class="text-wrapper mt-5" style="text-align: left">
+          <strong>Note:</strong>
+          <p class="w-responsive mx-auto">
+            Once we receive the filled form, we will contact you shortly to
+            confirm booking.
+          </p>
+          <p class="w-responsive mx-auto">
+            If you did not receive a confirmation email, please contact us in
+            our <a href="tel:+63-915-780-0776">contact number </a> or email us
+            at our <a href="reservations@365wonders.com">email.</a>
+          </p>
+        </div>
 
-        <h5 class="h5-responsive">Business Hours</h5>
-        <ul class="list-unstyled mb-0">
-          <li>
-            <p><span style="font-weight: 600"> Mon:</span> 9:00 AM – 8:00 PM</p>
-          </li>
-          <li>
-            <p>
-              <span style="font-weight: 600"> Tues:</span> 9:00 AM – 8:00 PM
-            </p>
-          </li>
-          <li>
-            <p><span style="font-weight: 600"> Wed:</span> 9:00 AM – 8:00 PM</p>
-          </li>
-          <li>
-            <p>
-              <span style="font-weight: 600"> Thurs:</span> 9:00 AM – 8:00 PM
-            </p>
-          </li>
-          <li>
-            <p><span style="font-weight: 600"> Fri:</span> 9:00 AM – 8:00 PM</p>
-          </li>
-          <li>
-            <p><span style="font-weight: 600"> Sat:</span> 9:00 AM – 5:00 PM</p>
-          </li>
-          <li>
-            <p><span style="font-weight: 600"> Sun:</span> Closed</p>
-          </li>
-        </ul>
+        
+
       </div>
     </div>
   </div>

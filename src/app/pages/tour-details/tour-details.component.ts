@@ -64,6 +64,7 @@ export class TourDetailsComponent implements OnInit {
   package:any;
  
   url: SafeResourceUrl | undefined;
+  subject: any;
 
   constructor(private dummy:DummyServiceService,private route:Router,private activated:ActivatedRoute, private title:Title,private toastr:ToastrService,private api:ApiService,public sanitizer:DomSanitizer,private firestore:Firestore,) { 
 
@@ -118,7 +119,7 @@ export class TourDetailsComponent implements OnInit {
     this.toastr.error('Maximum number of 9', 'Maximum number of people exceeded!');
   }
   showMinimum(){
-    this.toastr.error('Minimum number of people is 1!', 'Error!');
+    this.toastr.error('Minimum number of people is 2!', 'Error!');
   }
 
 
@@ -220,7 +221,7 @@ export class TourDetailsComponent implements OnInit {
           package:this.package,
         }
         
-        emailjs.send('service_qhjhmhr', 'template_wezpi2e',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
+        emailjs.send('service_qhjhmhr', 'template_8eqilr6',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
           console.log(result.text);
           this.fullname='';
           this.tel_no='';
@@ -229,7 +230,7 @@ export class TourDetailsComponent implements OnInit {
           this.departure_date='';
           this.return_date='';
           this.messages='';
-         
+          this.subject=''
           
          
           

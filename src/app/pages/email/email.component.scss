@@ -1,9 +1,39 @@
 section{
-    padding-top: 5em;
     padding-bottom: 5em;
+   
     min-height: 100vh;
     position: relative;
     background-color: white;
+    .book-header{
+        background-image: linear-gradient(rgba(37, 37, 37, 0.308),rgba(37, 37, 37, 0.308)), url('/assets/wonders/bg3.jpg') ;
+    
+        background-size: cover;
+        background-position: center;
+        background-position-y:-300px ;
+        background-repeat: no-repeat;
+
+        
+        background-attachment: fixed;
+        height: 400px;
+        display: grid;
+        place-items: center;
+        h1{
+            font-size: 4.3rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight:900;
+            line-height: 1;
+            color: #fff;
+            position: relative;
+            width: max-content;
+            z-index: 1;
+
+
+
+        }
+
+
+
+    }
 
 }
 section.open{
@@ -87,71 +117,7 @@ input[type=number] {
 
 
 
-header{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99;
-    transition: all 0.3s ease-out 0s;
-    background-color: white;
-    
-   
-    height: 5em;
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
 
-
-    
-.navbar{
-    display: flex;
-    justify-content: space-between;
-
-    .logos{
-        // background: linear-gradient(to right, #f7f7f700, #ffffff,#ffffff, #f7f7f700);
-        // padding-left: 1em;
-        // padding-right: 1em;
-        img{
-            max-width: 170px;
-        }
-    }
-
-    .nav-items
-    {
-        display: flex;
-        gap: 2em;
-        margin: 0;
-        list-style: none;
-
-
-        li{
-
-            a{
-
-                text-decoration: none;
-                color: #1f1f1f;
-                font-size: 1rem;
-                
-                transition: all 0.3s ease-out 0s;
-                color: rgb(31, 31, 31);
-
-                
-            }
-        }
-
-    }
-
-}
-    
-    
-
-
-    
-
-    
-
-}
 
 @media (max-width: 768px) {
     .book-header{

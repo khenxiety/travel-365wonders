@@ -1,100 +1,95 @@
-<app-header2></app-header2>
+<app-header></app-header>
 
-
-<section class="" style="position: relative;" id="blur">
-    <app-tilt-top></app-tilt-top>
-
+<section class="" style="position: relative" id="blur">
+  <header class="book-header">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="h1-responsive">
+            <span style="font-weight: 200">Connect</span>
+            <br />
+            With us
+          </h1>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <!--Section heading-->
-  
 
-  <div class="container" >
-
-    <img class="img-fluid bg-image" src="./assets/wonders/xxxxxx.png"   alt="">
-
+  <div class="container">
+    <img class="img-fluid bg-image" src="./assets/wonders/xxxxxx.png" alt="" />
 
     <h2 class="h1-responsive font-weight-bold my-4">Send us an Email</h2>
     <!--Section description-->
-    <p class=" w-responsive mx-auto mb-5">
-        Once we receive the filled form, we will reply you shortly.
+    <p class="w-responsive mx-auto mb-5">
+      Once we receive the filled form, we will reply you shortly.
     </p>
     <div class="row">
-    
       <div class="col-md-9 mb-md-0 mb-5">
-        <form
-          id="contact-form"
-          name="contact-form"
-          
-         
-        >
-        
+        <form id="contact-form" name="contact-form">
           <div class="row my-4">
-            
-            <div class="col-md-6">
-              <div class="md-form mb-0">
-                <input type="text" id="name" name="name" class="form-control" placeholder="ex: Juan Dela Cruz" />
-                <label for="name" class="label">Your name</label>
-              </div>
-            </div>
-           
             <div class="col-md-6">
               <div class="md-form mb-0">
                 <input
                   type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  placeholder="ex: Juan Dela Cruz"
+                  [(ngModel)]="fullname"
+                  style="text-transform: capitalize;"
+                />
+                <label for="name" class="label">Your name</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="md-form mb-0">
+                <input
+                  type="email"
                   id="email"
                   name="email"
                   class="form-control"
                   placeholder="ex: juan@gmail.com"
+                  [(ngModel)]="email"
+
                 />
-                <label for="email" class="" >Your email</label>
+                <label for="email" class="">Your email</label>
               </div>
             </div>
-            
-          
           </div>
           <div class="row my-4">
-            
             <div class="col-md-6">
-                <div class="md-form mb-0">
-                    <input
-                      type="text"
-                      id="mobile"
-                      name="mobile"
-                      class="form-control"
-                      placeholder="09*********"
-                    />
-                    <label for="mobile" class="">Mobile No.</label>
-                  </div>
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="mobile"
+                  name="mobile"
+                  class="form-control"
+                  placeholder="ex: 0915-123-4567"
+                  [(ngModel)]="mobile_no"
+                />
+                <label for="mobile" class="">Mobile No.</label>
+              </div>
             </div>
-           
+
             <div class="col-md-6">
-                <div class="md-form mb-0">
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      class="form-control"
-                      
-    
-                      
-                    />
-                    <label for="subject" class="">Subject</label>
-                  </div>
+              <div class="md-form mb-0">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-control"
+                  placeholder="ex: Booking"
+                  [(ngModel)]="subject"
+                />
+                <label for="subject" class="">Subject</label>
+              </div>
             </div>
-            
-          
           </div>
-          
-          
-       
-          
-          
-          
-          
-          
-     
+
           <div class="row my-4">
-      
             <div class="col-md-12">
               <div class="md-form">
                 <textarea
@@ -103,61 +98,59 @@
                   name="message"
                   rows="2"
                   class="form-control md-textarea"
+                  [(ngModel)]="messages"
                 ></textarea>
                 <label for="message">Your message</label>
               </div>
             </div>
           </div>
-    
         </form>
 
-        <div class=" text-md-left">
-          <button   type="submit" class="btn cstm-btn">Send Email</button>
+        <div class="text-md-left">
+          <button type="submit" class="btn cstm-btn" (click)="onSubmit()">Send Email</button>
         </div>
         <div class="status"></div>
       </div>
-     
+
       <div class="col-md-3 text-center">
-          <h4 class="h4-responsive">365 Wonders Address and contact</h4>
+
+        <img src="assets/wonders/xxxxxx.png" height="auto" width="300px" alt="">
+        <h4 class="h4-responsive my-3">Address and contact</h4>
         <ul class="list-unstyled mb-0">
           <li>
             <i class="uil uil-map-pin-alt"></i>
-            <p>Unit 3 ADEE Bldg
-                Purok 1, Brgy. Bolbok
-                Batangas City
-                4200
-                Philippines</p>
+            <p>
+              Unit 3 ADEE Bldg Purok 1, Brgy. Bolbok Batangas City 4200
+              Philippines
+            </p>
           </li>
 
           <li>
             <i class="uil uil-phone"></i>
-            <p>0915 780 0776 / 0929 262 0985
-                </p>
-             
+            <p>0915 780 0776 / 0929 262 0985</p>
           </li>
 
           <li>
             <i class="uil uil-at"></i>
-            <p> <a href="">reservations@365wonders.com</a> </p>
+            <p><a href="">reservations@365wonders.com</a></p>
           </li>
         </ul>
+        <div class="text-wrapper mt-5" style="text-align: left">
+          <strong>Note:</strong>
+          <p class="w-responsive mx-auto">
+            Once we receive the filled form, we will contact you shortly to
+            confirm booking.
+          </p>
+          <p class="w-responsive mx-auto">
+            If you did not receive a confirmation email, please contact us in
+            our <a href="tel:+63-915-780-0776">contact number </a> or email us
+            at our <a href="reservations@365wonders.com">email.</a>
+          </p>
+        </div>
 
-        <h5 class="h5-responsive">Business Hours</h5>
-        <ul class="list-unstyled mb-0">
-          <li> <p> <span style="font-weight: 600;"> Mon:</span> 	9:00 AM – 8:00 PM</p></li>
-          <li> <p> <span style="font-weight: 600;"> Tues:</span> 	9:00 AM – 8:00 PM</p></li>
-          <li> <p> <span style="font-weight: 600;"> Wed:</span> 	9:00 AM – 8:00 PM</p></li>
-          <li> <p> <span style="font-weight: 600;"> Thurs:</span> 	9:00 AM – 8:00 PM</p></li>
-          <li> <p> <span style="font-weight: 600;"> Fri:</span> 	9:00 AM – 8:00 PM</p></li>
-          <li> <p> <span style="font-weight: 600;"> Sat:</span> 	9:00 AM – 5:00 PM</p></li>
-          <li> <p> <span style="font-weight: 600;"> Sun:</span> 	Closed</p></li>
-          
-          
-        </ul>
-
+        
 
       </div>
-     
     </div>
   </div>
 

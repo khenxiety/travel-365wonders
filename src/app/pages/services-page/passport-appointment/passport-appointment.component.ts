@@ -68,7 +68,11 @@ export class PassportAppointmentComponent implements OnInit {
 
 
 
+  emergency_name:any;
+  emergency_contact:any;
 
+  occupation:any;
+  complete_address:any;
 
 
 
@@ -86,15 +90,35 @@ export class PassportAppointmentComponent implements OnInit {
     })
   }
   applicant(){
+    const renewal=document.getElementById('openRenewal')!
     if(this.appointmentFor=='Renewal'){
-      this.renewalOpen=true
+      renewal.classList.add('open')
+      
 
     }else{
-      this.renewalOpen=false
+      renewal.classList.remove('open')
+
     }
 
 
   }
+  status(){
+    const spouse=document.getElementById('spouse')!
+    if(this.civil_status=='Married' || this.civil_status=='Widowed' || this.civil_status=='Separated'){
+      spouse.classList.add('open')
+      
+
+    }else if(this.civil_status=='Single'){
+      spouse.classList.remove('open')
+    }
+      
+    
+
+  }
+
+
+
+
   onSubmit(){
     
 let data:any ={

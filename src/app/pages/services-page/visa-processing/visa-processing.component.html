@@ -1,0 +1,280 @@
+<app-header></app-header>
+<header class="book-header">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="h1-responsive">
+          <span style="font-weight: 200;">Services we</span>
+           <br>
+          Offer
+        </h1>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<section class="" style="position: relative" id="blur">
+ 
+
+  <div class="container">
+    <img class="img-fluid bg-image" src="./assets/wonders/xxxxxx.png" alt="" />
+
+    <h2 class="h1-responsive font-weight-bold my-4">
+      Travel Insurance Appointment
+    </h2>
+
+
+    <p class="w-responsive mx-auto mb-2 mt-5">Please fill this up:</p>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="md-form mb-0">
+          <select
+          class="form-select"
+        
+          name="destination"
+          id="destination"
+          [(ngModel)]="destination"
+
+         
+        >
+          <option selected>Select</option>
+          <option value="Africa">Africa</option>
+          <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="South America">South America</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Australia">Australia</option>
+            <option value="others">Others</option>
+
+
+        </select>
+
+        </div>
+      </div>
+      
+      
+      <label for="appointmentFor">Destination:</label>
+    </div>
+    <div class="row">
+      <div class="col-md-9 mb-md-0 mb-5">
+        <form id="contact-form" name="contact-form">
+            
+              <div class="row my-4">
+                <div class="col">
+                  <div class="md-form mb-0">
+                    <input
+                      type="date"
+                      class="form-control"
+                      [(ngModel)]="departure_date"
+                      id="departure_date"
+                      name="departure_date"
+                    />
+                    <label for="birthdaytime" class="">Departure Date</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="md-form mb-0">
+                    <input
+                      type="date"
+                      [(ngModel)]="return_date"
+                      class="form-control"
+                      id="return_date"
+                      name="return_date"
+                    />
+                    <label for="return_date" class="">Return Date*</label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row my-2">
+                  <h5 style="color: red;">Applicant Details</h5>
+              </div>
+              <div class="row my-2">
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+
+                    <div class="input-container d-flex">
+                        <select name="title" id="title" class="form-select" >
+                            <option selected>Select</option>
+                            <option value="Mr. ">Mr.</option>
+                            <option value="Mrs. ">Mrs.</option>
+                            <option value="Ms. ">Ms.</option>
+                            <option value="Dr. ">Dr.</option>
+                            <option value="Prof. ">Prof.</option>
+
+
+
+                        </select>
+                        <input
+                            type="text"
+                           
+                            class="form-control"
+                            id="first_name"
+                            name="first_name"
+                            placeholder="Given Name"
+                            required
+                            
+                        />
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            class="form-control"
+                            placeholder="Surname"
+                            
+                            required
+                        />
+
+                    </div>
+                    
+                    <label for="mobile" class="">Name:</label>
+                  </div>
+    
+                </div>
+    
+                
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input
+                        type="text"
+                        id="passportNumber"
+                        name="passportNumber"
+                        class="form-control"
+                        placeholder="ex: P0*******"
+                     
+                        required
+                      />
+                      <label for="name" class="label">PASSPORT NUMBER</label>
+                    </div>
+                  </div>
+              </div>
+              
+              <div class="row my-2">
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input
+                        type="date"
+                        id="bdate_MM"
+                        name="bdate_MM"
+                        class="form-control"
+                      
+                        required
+                        placeholder="ex: 08"
+                        maxlength="2"
+                      />
+                      <label for="mobile" class="">Birthdate (MM)</label>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input
+                        type="text"
+                        id="number"
+                        name="number"
+                        class="form-control"
+                      
+                        required
+                      
+                        maxlength="12"
+                      />
+                      <label for="mobile" class="">Contact No.</label>
+                    </div>
+                  </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control"
+                      
+                        required
+                      
+                        maxlength="12"
+                      />
+                      <label for="mobile" class="">Email</label>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        class="form-control"
+                      
+                        required
+                      
+                        
+                      />
+                      <label for="mobile" class="">Address</label>
+                    </div>
+                  </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <select name="country" id="country" class="form-control">
+                          <option selected>
+                              <input type="text" placeholder="Search">
+                          </option>
+                          <option *ngFor="let counts of country" value="{{counts.name}}">{{counts.name.common}}</option>
+                      </select>
+                      <label for="mobile" class="">Country</label>
+                    </div>
+                  </div>
+              </div>
+          
+
+
+            
+           
+         
+
+
+
+           
+
+      
+          <div class="text-md-left">
+            <input type="submit" class="btn cstm-btn" />
+          </div>
+        </form>
+
+        <div class="status"></div>
+      </div>
+
+      <div class="col-md-3 text-center">
+        
+
+        <div class="text-wrapper " style="text-align: left">
+          <strong>Note:</strong>
+          <p class="w-responsive mx-auto">
+            Once we receive the filled form, we will contact you shortly to
+            confirm booking.
+          </p>
+          <p class="w-responsive mx-auto">
+            If you did not receive a confirmation email, please contact us in
+            our <a href="tel:+63-915-780-0776">contact number </a> or email us
+            at our <a href="reservations@365wonders.com">email.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
+
+

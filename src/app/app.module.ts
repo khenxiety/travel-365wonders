@@ -49,6 +49,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 import { environment } from 'src/environments/environment';
 import { JwtModule } from '@auth0/angular-jwt';
+import { FacebookModule } from 'ngx-facebook';
+import { VisaProcessingComponent } from './pages/services-page/visa-processing/visa-processing.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -86,7 +88,8 @@ export function tokenGetter() {
     PostsComponent,
     AboutPageComponent,
     PassportAppointmentComponent,
-    AddPostComponent
+    AddPostComponent,
+    VisaProcessingComponent
     
   ],
   imports: [
@@ -95,6 +98,7 @@ export function tokenGetter() {
     FormsModule,
     SwiperModule,
     CommonModule,
+    FacebookModule.forRoot(),
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), 
     HttpClientModule,
@@ -107,6 +111,7 @@ export function tokenGetter() {
         
       }
     }),
+    
     
     
   ],

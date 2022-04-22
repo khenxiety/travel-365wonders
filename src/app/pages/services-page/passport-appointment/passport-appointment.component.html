@@ -33,8 +33,9 @@
           class="form-select"
           [(ngModel)]="appointmentFor"
           name="appointmentFor"
-          (click)="applicant()"
           id="appointmentFor"
+
+          (click)="applicant()"
         >
           <option selected>Select</option>
           <option value="New Applicant">New Applicant</option>
@@ -55,15 +56,16 @@
               <div class="md-form mb-0">
                 <input
                   type="text"
-                  id="firstName"
-                  name="firstName"
+                  id="lastName"
+                  name="lastName"
                   class="form-control"
-                  placeholder="ex: Juan "
-                  [(ngModel)]="firstName"
+                  placeholder="ex: Dela Cruz"
+                  [(ngModel)]="lastName"
                   required
                 />
-                <label for="name" class="label">First Name</label>
+                <label for="mobile" class="">Last name:</label>
               </div>
+
             </div>
 
             <div class="col-md-6">
@@ -83,17 +85,18 @@
           </div>
           <div class="row my-2">
             <div class="col-md-6">
+
               <div class="md-form mb-0">
                 <input
                   type="text"
-                  id="lastName"
-                  name="lastName"
+                  id="firstName"
+                  name="firstName"
                   class="form-control"
-                  placeholder="ex: Dela Cruz"
-                  [(ngModel)]="lastName"
+                  placeholder="ex: Juan "
+                  [(ngModel)]="firstName"
                   required
                 />
-                <label for="mobile" class="">Last name:</label>
+                <label for="name" class="label">First Name</label>
               </div>
             </div>
 
@@ -128,20 +131,7 @@
               </div>
             </div>
 
-            <div class="col-md-6">
-              <div class="md-form mb-0">
-                <input
-                  type="text"
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  class="form-control"
-                  maxlength="11"
-                  [(ngModel)]="phoneNumber"
-                  required
-                />
-                <label for="subject" class="">Phone Number</label>
-              </div>
-            </div>
+            
           </div>
           <div class="row my-2">
             <div class="col-md-3">
@@ -152,6 +142,8 @@
                   id="civil_status"
                   name="civil_status"
                   aria-label="Default select example"
+                  (click)="status()"
+
                 >
                   <option selected>Select</option>
                   <option value="Single">Single</option>
@@ -286,21 +278,6 @@
                 <div class="md-form mb-0">
                   <input
                     type="text"
-                    id="fathers_firstname"
-                    name="fathers_firstname"
-                    class="form-control"
-                    placeholder="ex: Juan"
-                    [(ngModel)]="fathers_firstname"
-                    required
-                  />
-                  <label for="name" class="label">First Name</label>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="md-form mb-0">
-                  <input
-                    type="text"
                     id="fathers_lastname"
                     name="fathers_lastname"
                     class="form-control"
@@ -309,6 +286,22 @@
                     required
                   />
                   <label for="email" class="">Last Name</label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
+                    id="fathers_firstname"
+                    name="fathers_firstname"
+                    class="form-control"
+                    placeholder="ex: Juan"
+                    [(ngModel)]="fathers_firstname"
+                    required
+                  />
+                  <label for="name" class="label">First Name</label>
                 </div>
               </div>
             </div>
@@ -356,6 +349,23 @@
                 <div class="md-form mb-0">
                   <input
                     type="text"
+                    id="mothers_lastname"
+                    name="mothers_lastname"
+                    class="form-control"
+                    placeholder="ex: Dela Cruz"
+                    [(ngModel)]="mothers_lastname"
+                    required
+                  />
+                  <label for="email" class="">Maiden Last Name</label>
+                </div>
+
+              </div>
+
+              <div class="col-md-6">
+
+                <div class="md-form mb-0">
+                  <input
+                    type="text"
                     id="mothers_firstname"
                     name="mothers_firstname"
                     class="form-control"
@@ -364,21 +374,6 @@
                     required
                   />
                   <label for="name" class="label">First Name</label>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="md-form mb-0">
-                  <input
-                    type="text"
-                    id="mothers_lastname"
-                    name="mothers_lastname"
-                    class="form-control"
-                    placeholder="ex: Dela Cruz"
-                    [(ngModel)]="mothers_lastname"
-                    required
-                  />
-                  <label for="email" class="">Last Name</label>
                 </div>
               </div>
             </div>
@@ -394,7 +389,7 @@
                     [(ngModel)]="mothers_middle"
                     required
                   />
-                  <label for="name" class="label">Middle Name</label>
+                  <label for="name" class="label">Maiden Middle Name</label>
                 </div>
               </div>
 
@@ -415,7 +410,11 @@
             </div>
 
             <!-- spouse Information ############################################################################################## -->
-            <div class="row my-4">
+
+            <div class="spouse" id="spouse">
+
+            
+            <div class="row my-4 " >
               <div class="col">
                 <h5 style="color: var(--red)">SPOUSE INFORMATION</h5>
               </div>
@@ -482,10 +481,11 @@
                 </div>
               </div>
             </div>
+          </div>
             
 
             <!-- passport Information ############################################################################################## -->
-            <div class="openRenewal" *ngIf="renewalOpen==true">
+            <div class="openRenewal" id="openRenewal" >
               <div class="row my-4">
                 <div class="col">
                   <h5 style="color: var(--red)">For renewal:</h5>
@@ -613,6 +613,100 @@
                   </div>
                 </div>
               </div>
+
+
+
+            </div>
+            <div class="contacts" id="contacts">
+
+            
+              <div class="row my-4 " >
+                <div class="col">
+                  <h5 style="color: var(--red)">EMERGENCY CONTACT</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="emergency_name"
+                      name="emergency_name"
+                      class="form-control"
+                      
+                      [(ngModel)]="emergency_name"
+                      required
+                    />
+                    <label for="name" class="label">Emergency Contact Person</label>
+                  </div>
+                </div>
+  
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="complete_address"
+                      name="complete_address"
+                      class="form-control"
+                      placeholder="ex: #123, St. XYZ, Brgy. ABC, City, Province"
+                  
+                    
+                      [(ngModel)]="complete_address"
+                      required
+                     
+                    
+                    />
+                    <label for="complete_address" class="">Applicants complete address</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2">
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="emergency_contact"
+                      name="emergency_contact"
+                      class="form-control"
+                    
+                      [(ngModel)]="spouse_lastname"
+                      required
+                      maxlength="12"
+                      required=""
+                    />
+                    <label for="email" class="">Emergency Contact No.</label>
+                  </div>
+                </div>
+  
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="spouse_citizenship"
+                      name="spouse_citizenship"
+                      class="form-control"
+                      
+                      [(ngModel)]="spouse_citizenship"
+                      required
+                    />
+                    <label for="email" class="">Nearest Landmark</label>
+                  </div>
+                </div>
+                <div class="col-md-6 my-2">
+                  <div class="md-form mb-0">
+                    <input
+                      type="text"
+                      id="occupation"
+                      name="occupation"
+                      class="form-control"
+                  
+                      [(ngModel)]="occupation"
+                      required
+                    />
+                    <label for="email" class="text-danger">Applicants Occupation</label>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="text-md-left">
@@ -624,28 +718,9 @@
       </div>
 
       <div class="col-md-3 text-center">
-        <h4 class="h4-responsive">365 Wonders Address and contact</h4>
-        <ul class="list-unstyled mb-0">
-          <li>
-            <i class="uil uil-map-pin-alt"></i>
-            <p>
-              Unit 3 ADEE Bldg Purok 1, Brgy. Bolbok Batangas City 4200
-              Philippines
-            </p>
-          </li>
+        
 
-          <li>
-            <i class="uil uil-phone"></i>
-            <p>0915 780 0776 / 0929 262 0985</p>
-          </li>
-
-          <li>
-            <i class="uil uil-at"></i>
-            <p><a href="">reservations@365wonders.com</a></p>
-          </li>
-        </ul>
-
-        <div class="text-wrapper mt-5" style="text-align: left">
+        <div class="text-wrapper " style="text-align: left">
           <strong>Note:</strong>
           <p class="w-responsive mx-auto">
             Once we receive the filled form, we will contact you shortly to

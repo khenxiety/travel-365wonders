@@ -7,6 +7,7 @@ import { EmailComponent } from './pages/email/email.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PassportAppointmentComponent } from './pages/services-page/passport-appointment/passport-appointment.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
+import { VisaProcessingComponent } from './pages/services-page/visa-processing/visa-processing.component';
 import { TourDetailsComponent } from './pages/tour-details/tour-details.component';
 import { ToursPageComponent } from './pages/tours-page/tours-page.component';
 
@@ -34,6 +35,12 @@ const routes: Routes = [
    
     path:"services/passport-appointment",
     component:PassportAppointmentComponent
+
+  },
+  {
+   
+    path:"services/travel-insurance",
+    component:VisaProcessingComponent
 
   },
   {

@@ -5,6 +5,13 @@ import emailjs, { EmailJSResponseStatus, init } from '@emailjs/browser';
 import { ToastrService } from 'ngx-toastr';
 init("user_2OS84QxjMn43nqkQifnJH");
 
+import {
+  collection,
+  addDoc,
+  Firestore,
+  getDocs,
+} from '@angular/fire/firestore';
+
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
@@ -21,7 +28,9 @@ export class BookingComponent implements OnInit {
   return_date:any;
   messages:any;
 
+  subject:any
 
+  package:any
 
 
   child:number=0 ;
@@ -40,13 +49,15 @@ export class BookingComponent implements OnInit {
 
 
   emailverify:any;
+  tours: any;
 
 
 
 
   
 
-  constructor(private toastr:ToastrService, private title: Title) { }
+    
+    constructor(private toastr:ToastrService, private title: Title, private firestore: Firestore) { }
 
   ngOnInit(): void {
     window.scroll({ 
@@ -54,6 +65,9 @@ export class BookingComponent implements OnInit {
       left: 0
     });
     this.title.setTitle('365Wonders | Booking');
+
+    this.getPosts();
+    
 
   }
   showSuccess(status:any) {
@@ -83,19 +97,21 @@ export class BookingComponent implements OnInit {
       // this.messages="Im requesting to reset my password. Email me at"+this.email;
       let data={
         from_name: this.fullname,
-        full_name: this.fullname,
-        dates: "From "+departure.toDateString()+" to "+return_date.toDateString(),
-        destination: this.destination,
-        no_person: this.adult+" Adult "+this.child+" Child "+this.infants+" Infants ",
-        telephone:this.tel_no,
+          full_name: this.fullname,
+          dates: "From "+departure.toDateString()+" to "+return_date.toDateString(),
+          destination: this.destination,
+          no_person: this.adult+" Adult "+this.child+" Child "+this.infants+" Infants ",
+          telephone:this.tel_no,
 
-        mobile: this.mobile_no,
-        email_add: this.email,
-        message:this.messages,
+          mobile: this.mobile_no,
+          email_add: this.email,
+          message:this.messages,
+          package:this.package,
+          subject:this.subject,
         
       }
       
-      emailjs.send('service_qhjhmhr', 'template_wezpi2e',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
+      emailjs.send('service_qhjhmhr', 'template_8eqilr6',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
         console.log(result.text);
         this.fullname='';
         this.tel_no='';
@@ -104,6 +120,7 @@ export class BookingComponent implements OnInit {
         this.departure_date='';
         this.return_date='';
         this.messages='';
+        this.subject='';
        
         
        
@@ -117,6 +134,21 @@ export class BookingComponent implements OnInit {
       });
       
 
+  }
+
+  tourDest(){
+    this.destination=this.tours[0].destination;
+  }
+
+  type(){
+    const pack=document.getElementById('package')!;
+    if(this.subject=='Tour Package'){
+      pack.classList.add('open');
+     
+
+    }else{
+      pack.classList.remove('open');
+    }
   }
 
   onChange(){
@@ -139,6 +171,27 @@ export class BookingComponent implements OnInit {
       
     }
     
+  }
+
+
+
+
+  getPosts() {
+    const dbinstance = collection(this.firestore, 'posts');
+    getDocs(dbinstance)
+      .then((res: any) => {
+       
+        this.tours = [
+          ...res.docs.map((doc: any) => {
+            return { ...doc.data(), id: doc.id };
+          }),
+        ];
+        
+      
+      })
+      .catch((err: any) => {
+        console.log(err.message);
+      });
   }
 
 

@@ -15,28 +15,31 @@ export class Section1Component implements OnInit {
   title="Welcome";
   navbarfixed:boolean=false;
 
+  top_value:any=window.innerHeight;
+
   constructor(public sanitizer: DomSanitizer) { }
+
 
   ngOnInit(): void {
     this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
   }
 
   @HostListener('window:scroll', ['$event']) onscroll(){
-    if(window.scrollY>500){
+    if(window.scrollY>80){
       this.navbarfixed=true;
+      this.top_value=0;
+      
     }
     else{
       this.navbarfixed=false;
+      this.top_value=window.innerHeight;
     }
-
-  
 
   }
 
-
   toTop(){
     window.scroll({ 
-      top: 0, 
+      top: this.top_value, 
       left: 0
   });
   }
