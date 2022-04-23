@@ -57,25 +57,13 @@
           <div class="row " id="package">
             <div class="col-md-3">
               <div class="md-form mb-0">
-                <select
-                class="form-select"
-                [(ngModel)]="package"
-                name="package"
-                (click)="tourDest()"
-                
-      
-                
-              >
-                <option selected>Select</option>
-                <option *ngFor="let tour of tours" value="{{tour.title}}">{{tour.title}}</option>
-               
-              </select>
+                <a style="cursor: pointer; color: red;" routerLink="/tours">Check out our Tour Packages</a>
       
               </div>
             </div>
             
             
-            <label for="package">Select Package:</label>
+           
           </div>
           <div class="row my-4">
             <div class="col-md-6">
@@ -160,7 +148,7 @@
             <div class="col">
               <div class="md-form mb-0">
                 <input
-                  type="datetime-local"
+                  type="date"
                   class="form-control"
                   [(ngModel)]="departure_date"
                   id="departure_date"
@@ -172,7 +160,7 @@
             <div class="col">
               <div class="md-form mb-0">
                 <input
-                  type="datetime-local"
+                  type="date"
                   [(ngModel)]="return_date"
                   class="form-control"
                   id="return_date"
@@ -201,10 +189,7 @@
                 />
                 <label for="adult" class="text-muted">Adult (12+)</label>
 
-                <label for="adult" class=""
-                  >No. of Person (max number: 9 
-                  ) {{ maxmessage }}</label
-                >
+                
               </div>
             </div>
             <div class="col">

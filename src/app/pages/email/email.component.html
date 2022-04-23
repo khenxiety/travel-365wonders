@@ -76,14 +76,13 @@
 
             <div class="col-md-6">
               <div class="md-form mb-0">
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  class="form-control"
-                  placeholder="ex: Booking"
-                  [(ngModel)]="subject"
-                />
+                <select name="subject" id="subject" class="form-select" [(ngModel)]="subject">
+                  <option selected>Select</option>
+                  <option value="Visa Processing Assistance">Visa Processing Assistance</option>
+                  <option value="APOSTILLE">APOSTILLE</option>
+                  <option value="Philippine Statistics Authority (PSA)">Philippine Statistics Authority (PSA)</option>
+                  <option value="Philippine Barangay Clearance">Philippine Barangay Clearance</option>
+                </select>
                 <label for="subject" class="">Subject</label>
               </div>
             </div>

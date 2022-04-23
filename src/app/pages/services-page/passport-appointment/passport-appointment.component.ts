@@ -73,6 +73,7 @@ export class PassportAppointmentComponent implements OnInit {
 
   occupation:any;
   complete_address:any;
+  landmark:any;
 
 
 
@@ -142,14 +143,17 @@ let data:any ={
         f_firstname:this.fathers_firstname,
         f_middlename:this.fathers_middle,
         f_citizenship:this.fathers_citizenship,
+        
         m_lastname:this.mothers_lastname,
         m_firstname:this.mothers_firstname,
         m_middle:this.mothers_middle,
         m_citizenship:this.mothers_citizenship,
+        
         s_lastname:this.spouse_lastname,
         s_firstname:this.spouse_firstname,
         s_middlename:this.spouse_middle,
         s_citizenship:this.spouse_citizenship,
+        
         passportNumber:this.passportNumber,
         passportDate_MM:this.passportDate_MM,
         passportDate_DD:this.passportDate_DD,
@@ -158,7 +162,13 @@ let data:any ={
         expiryDate_DD:this.expiryDate_DD,
         expiryDate_YR:this.expiryDate_YR,
         issuingAuth:this.issuingAuth,
-        appointmentFor:this.appointmentFor
+        appointmentFor:this.appointmentFor,
+        emergency_name:this.emergency_name,
+        emergency_contact:this.emergency_contact,
+        occupation:this.occupation,
+        complete_address:this.complete_address,
+        landmark:this.landmark
+
   
   
   
@@ -166,7 +176,7 @@ let data:any ={
       }
 
 
-      emailjs.send('service_qhjhmhr', 'template_i2gra79',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
+      emailjs.send('service_qhjhmhr', 'template_3sratr7',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
       console.log(result.text);
       
       

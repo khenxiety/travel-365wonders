@@ -111,7 +111,7 @@ export class BookingComponent implements OnInit {
         
       }
       
-      emailjs.send('service_qhjhmhr', 'template_8eqilr6',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
+      emailjs.send('service_qhjhmhr', 'template_h2wa38m',data , 'knXkgg-HEEkVjRDb_').then((result: EmailJSResponseStatus) => {
         console.log(result.text);
         this.fullname='';
         this.tel_no='';

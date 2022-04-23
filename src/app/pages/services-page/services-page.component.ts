@@ -33,7 +33,7 @@ export class ServicesPageComponent implements OnInit {
       title: 'INTERNATIONAL TOUR PACKAGE',
       duration: 'Duration varies',
       description:'International Tour Package - Asia - Middle East - Europe - USA',
-      img:'https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/278639743_1439475333156213_4805021730816975808_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeHHufkf3bCT2neL8XXyoYUh7Wu3FOEXV03ta7cU4RdXTXL2KcqvT9aMlnOPO8Jx-8_rFahUH17NJTwDjpMrF9uh&_nc_ohc=wUU16H3nBA0AX9kMNFn&_nc_ht=scontent.fmnl17-3.fna&oh=00_AT98fJ6BUrj0ZIVeXxOO50enmHBDv-3pnGv4mpCuqvWAMg&oe=6263668E',
+      img:'https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/278639743_1439475333156213_4805021730816975808_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeHHufkf3bCT2neL8XXyoYUh7Wu3FOEXV03ta7cU4RdXTXL2KcqvT9aMlnOPO8Jx-8_rFahUH17NJTwDjpMrF9uh&_nc_ohc=jVQnh_NvKDIAX811HYV&_nc_ht=scontent.fmnl17-3.fna&oh=00_AT93Mond7Ns1nhyq6JrzWAZEICN7URhQl6Tc-zR4krjnQQ&oe=6269554E',
       route:'/booking'
 
     },{
@@ -71,7 +71,7 @@ export class ServicesPageComponent implements OnInit {
       duration: 'Duration varies',
       description:'Visa Application of the following Countries: - JAPAN - KOREA - USA - CANADA - UK - SCHENGEN VISA -',
       img:'assets/wonders/visa2.png',
-
+      route:'/contact-page'
 
     },
     {

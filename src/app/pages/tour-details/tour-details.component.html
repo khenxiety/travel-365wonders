@@ -59,13 +59,13 @@
                   </div>
                 </div>
 
-                <!-- <div class="col flex">
+                <div class="col flex">
                   <i class="uil uil-users-alt"></i>
                   <div class="details-container">
                     <h5>Group Size</h5>
-                    <p>Minimum:2 Maximum:9</p>
+                    <p>{{dt.people}}</p>
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@
 
               <div class="frame ">
                 <div class="text-wrap">
-                <h5>Check out this <a href="">Facebook</a>  for more details and to keep updated.</h5>
+                <h5>Check out this <a href="https://www.facebook.com/travelby365wonders">Facebook</a>  for more details and to keep updated.</h5>
 
 
                 </div>
@@ -206,7 +206,7 @@
                 
                   <div class="">
                     <input
-                      type="datetime-local"
+                      type="date"
                       class="form-control"
                       [(ngModel)]="departure_date"
                       id="departure_date"
@@ -217,7 +217,7 @@
 
                   <div class="">
                     <input
-                      type="datetime-local"
+                      type="date"
                       [(ngModel)]="return_date"
                       class="form-control"
                       id="return_date"
