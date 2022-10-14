@@ -76,14 +76,24 @@
 
             <div class="col-md-6">
               <div class="md-form mb-0">
-                <select name="subject" id="subject" class="form-select" [(ngModel)]="subject">
+                <select name="subject" id="subject" class="form-select" [(ngModel)]="subject" (click)="type()">
                   <option selected>Select</option>
                   <option value="Visa Processing Assistance">Visa Processing Assistance</option>
                   <option value="APOSTILLE">APOSTILLE</option>
                   <option value="Philippine Statistics Authority (PSA)">Philippine Statistics Authority (PSA)</option>
+                  <option value="others">Others</option>
                  
                 </select>
                 <label for="subject" class="">Subject</label>
+
+
+                <div class="others" id="subject-others">
+                  <input type="text" name="subject" id="subject" class="form-control my-2" style="text-transform: capitalize;" [(ngModel)]="subject">
+                  <label for="subject" class="">Others</label>
+
+                </div>
+                
+
               </div>
             </div>
           </div>

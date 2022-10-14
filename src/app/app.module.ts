@@ -51,6 +51,12 @@ import { environment } from 'src/environments/environment';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FacebookModule } from 'ngx-facebook';
 import { VisaProcessingComponent } from './pages/services-page/visa-processing/visa-processing.component';
+import { PsaComponent } from './pages/services-page/psa/psa.component';
+import { BirthComponent } from './pages/services-page/psa/forms/birth/birth.component';
+import { MarriageComponent } from './pages/services-page/psa/forms/marriage/marriage.component';
+import { DeathComponent } from './pages/services-page/psa/forms/death/death.component';
+import { CenomarComponent } from './pages/services-page/psa/forms/cenomar/cenomar.component';
+
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -89,7 +95,13 @@ export function tokenGetter() {
     AboutPageComponent,
     PassportAppointmentComponent,
     AddPostComponent,
-    VisaProcessingComponent
+    VisaProcessingComponent,
+    PsaComponent,
+    BirthComponent,
+    MarriageComponent,
+    DeathComponent,
+    CenomarComponent
+
     
   ],
   imports: [

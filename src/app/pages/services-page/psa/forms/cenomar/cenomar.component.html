@@ -1,0 +1,368 @@
+<form id="contact-form" name="contact-form" (ngSubmit)="onSubmit()">
+    <h4 class="my-3">Application Form-Certificate of No Record of Marriage</h4>
+
+    <div class="row my-2">
+      <div class="col-md-6">
+        <div class="md-form mb-0">
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            class="form-control"
+            placeholder="ex: Dela Cruz"
+            [(ngModel)]="bc_lastName"
+            required
+          />
+          <label for="mobile" class="">Last name:</label>
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="md-form mb-0">
+          <input
+            type="text"
+            id="pBirth_city"
+            name="pBirth_city"
+            class="form-control"
+            placeholder="ex: Quezon City"
+            [(ngModel)]="bc_pBirth_city"
+            required
+          />
+          <label for="email" class="">Place of Birth (City / Municipality)</label>
+        </div>
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-md-6">
+
+        <div class="md-form mb-0">
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            class="form-control"
+            placeholder="ex: Juan "
+            [(ngModel)]="bc_firstName"
+            required
+          />
+          <label for="name" class="label">First Name</label>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="md-form mb-0">
+          <input
+            type="text"
+            id="pBirth_province"
+            name="pBirth_province"
+            class="form-control"
+            placeholder="ex: Rizal"
+            [(ngModel)]="bc_pBirth_province"
+            required
+          />
+          <label for="subject" class="">(Province)</label>
+        </div>
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-md-6">
+        <div class="md-form mb-0">
+          <input
+            type="text"
+            id="middleName"
+            name="middleName"
+            class="form-control"
+            placeholder="ex: Manalo"
+            [(ngModel)]="bc_middleName"
+            required
+          />
+          <label for="mobile" class="">Middle Name</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="md-form mb-0">
+          <input
+            type="text"
+            id="country"
+            name="country"
+            class="form-control"
+            placeholder="ex: Philippines"
+           
+            
+            [(ngModel)]="bc_country"
+            required
+          />
+          <label for="mobile" class="">Country <small class="text-muted">Please specify country id married abroad only</small></label>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div class="row my-2">
+      <div class="col-md-2">
+        <div class="md-form mb-0">
+          <input
+            type="text"
+            id="bdate_DD"
+            name="bdate_DD"
+            class="form-control"
+            [(ngModel)]="bc_bdate_DD"
+            placeholder="ex: 31"
+            required
+            maxlength="2"
+          />
+          <label for="mobile" class="">Birthdate (DD)</label>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="md-form mb-0">
+          <input
+            type="text"
+            id="bdate_MM"
+            name="bdate_MM"
+            class="form-control"
+            [(ngModel)]="bc_bdate_MM"
+            required
+            placeholder="ex: 08"
+            maxlength="2"
+          />
+          <label for="mobile" class="">(MM)</label>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="md-form mb-0">
+          <input
+            type="text"
+            id="bdate_YR"
+            name="bdate_YR"
+            class="form-control"
+            [(ngModel)]="bc_bdate_YR"
+            placeholder="ex: 1995"
+            required
+            maxlength="4"
+          />
+          <label for="mobile" class="">(YR)</label>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="row my-2">
+
+
+      <!-- father Information ############################################################################################## -->
+
+      <div class="row my-4">
+        <div class="col">
+          <h5 >NAME OF FATHER </h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="md-form mb-0">
+            <input
+              type="text"
+              id="fathers_lastname"
+              name="fathers_lastname"
+              class="form-control"
+              placeholder="ex: Dela Cruz"
+              [(ngModel)]="bc_fathers_lastname"
+              required
+            />
+            <label for="email" class="">Last Name</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="md-form mb-0">
+            <input
+              type="text"
+              id="fathers_middle"
+              name="fathers_middle"
+              class="form-control"
+              placeholder="ex: Dela Cruz"
+              [(ngModel)]="bc_fathers_middle"
+              required
+            />
+            <label for="name" class="label">Middle Name</label>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+
+          <div class="md-form mb-0">
+            <input
+              type="text"
+              id="fathers_firstname"
+              name="fathers_firstname"
+              class="form-control"
+              placeholder="ex: Juan"
+              [(ngModel)]="bc_fathers_firstname"
+              required
+            />
+            <label for="name" class="label">First Name</label>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <!-- mother Information ############################################################################################## -->
+
+      <div class="row my-4">
+        <div class="col">
+          <h5 >MAIDEN NAME OF MOTHER</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="md-form mb-0">
+            <input
+              type="text"
+              id="mothers_lastname"
+              name="mothers_lastname"
+              class="form-control"
+              placeholder="ex: Dela Cruz"
+              [(ngModel)]="bc_mothers_lastname"
+              required
+            />
+            <label for="email" class="">Last Name</label>
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+          <div class="md-form mb-0">
+            <input
+              type="text"
+              id="mothers_middle"
+              name="mothers_middle"
+              class="form-control"
+              placeholder="ex: Dela Cruz"
+              [(ngModel)]="bc_mothers_middle"
+              required
+            />
+            <label for="name" class="label">Maiden Middle Name</label>
+          </div>
+        </div>
+
+      </div>
+      <div class="row my-2">
+        <div class="col-md-6">
+
+          <div class="md-form mb-0">
+            <input
+              type="text"
+              id="mothers_firstname"
+              name="mothers_firstname"
+              class="form-control"
+              placeholder="ex: Juan "
+              [(ngModel)]="bc_mothers_firstname"
+              required
+            />
+            <label for="name" class="label">First Name</label>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      
+
+
+      
+
+      <!-- passport Information ############################################################################################## -->
+
+      <div class="contacts" id="contacts">
+
+      
+        <div class="row my-4 " >
+          <div class="col">
+            <h5 style="color: var(--red)">PURPOSE</h5>
+          </div>
+        </div>
+        <div class="row">
+          
+          <p>Choose one and check the appropiate box.</p>
+          <div class="col-md-3">
+            <div class="md-form mb-0">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Claim Benefits / Loan
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="md-form mb-0">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Employment (Local)
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="md-form mb-0">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                School Requirements
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row my-3">
+          <div class="col-md-3">
+            <div class="md-form mb-0">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Passport / Travel
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="md-form mb-0">
+              <input class="form-control" type="text" value="" id="flexCheckDefault">
+              <label  for="flexCheckDefault">
+                Specify Country
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row ">
+          <div class="col-md-3">
+            <div class="md-form mb-0">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Employment / Abroad
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="md-form mb-0">
+              <input class="form-control" type="text" value="" id="flexCheckDefault">
+              <label  for="flexCheckDefault">
+                Specify Country
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="text-md-left">
+      <input type="submit" class="btn cstm-btn" />
+    </div>
+  </form>

@@ -97,7 +97,7 @@
                   <div class="md-form mb-0">
 
                     <div class="input-container d-flex">
-                        <select name="title" id="title" class="form-select" >
+                        <select name="title" id="title" [(ngModel)]="name_title" class="form-select" >
                             <option selected>Select</option>
                             <option value="Mr. ">Mr.</option>
                             <option value="Mrs. ">Mrs.</option>
@@ -110,7 +110,7 @@
                         </select>
                         <input
                             type="text"
-                           
+                            [(ngModel)]="first_name"
                             class="form-control"
                             id="first_name"
                             name="first_name"
@@ -124,6 +124,7 @@
                             name="lastName"
                             class="form-control"
                             placeholder="Surname"
+                            [(ngModel)]="last_name"
                             
                             required
                         />
@@ -147,6 +148,7 @@
                         name="passportNumber"
                         class="form-control"
                         placeholder="ex: P0*******"
+                        [(ngModel)]="passport_number"
                      
                         required
                       />
@@ -163,6 +165,7 @@
                         id="bdate_MM"
                         name="bdate_MM"
                         class="form-control"
+                        [(ngModel)]="birth_date"
                       
                         required
                         placeholder="ex: 08"
@@ -180,6 +183,7 @@
                         id="number"
                         name="number"
                         class="form-control"
+                        [(ngModel)]="phone_number"
                       
                         required
                       
@@ -197,6 +201,7 @@
                         id="email"
                         name="email"
                         class="form-control"
+                        [(ngModel)]="email"
                       
                         required
                       
@@ -214,6 +219,7 @@
                         id="address"
                         name="address"
                         class="form-control"
+                        [(ngModel)]="address"
                       
                         required
                       
@@ -226,11 +232,11 @@
               <div class="row my-2">
                 <div class="col-md-6">
                     <div class="md-form mb-0">
-                      <select name="country" id="country" class="form-control">
+                      <select name="country" [(ngModel)]="country_origin" id="country" class="form-control">
                           <option selected>
                               <input type="text" placeholder="Search">
                           </option>
-                          <option *ngFor="let counts of country" value="{{counts.name}}">{{counts.name.common}}</option>
+                          <option *ngFor="let counts of country" value="{{counts.name.common}}">{{counts.name.common}}</option>
                       </select>
                       <label for="mobile" class="">Country</label>
                     </div>
@@ -249,7 +255,7 @@
 
       
           <div class="text-md-left">
-            <input type="submit" class="btn cstm-btn" />
+            <button class="btn cstm-btn" (click)="onSubmit()">Submit</button>
           </div>
         </form>
 

@@ -18,6 +18,11 @@ export class EmailComponent implements OnInit {
   email: any;
   messages: any;
   subject: any;
+  
+  
+
+
+
 
 
   constructor(private toastr:ToastrService, private title: Title) { }
@@ -42,10 +47,20 @@ export class EmailComponent implements OnInit {
       message:this.messages,
       subject:this.subject
     }
+ 
+    
 
 
     emailjs.send('service_2hem73b', 'template_a5fm2z8',data , 'user_2OS84QxjMn43nqkQifnJH').then((result: EmailJSResponseStatus) => {
       console.log(result.text);
+
+   
+      
+      
+
+
+
+
       this.fullname='';
     
       this.mobile_no='';
@@ -62,8 +77,45 @@ export class EmailComponent implements OnInit {
 
     }, (error) => {
       console.log(error.text);
+
+      
       this.toastr.error('Something went wrong', 'Error');
     });
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  type(){
+
+    const pack=document.getElementById('subject-others')!;
+    if(this.subject=='others'){
+      pack.classList.add('open');
+     
+
+    }else{
+      pack.classList.remove('open');
+    }
+
+  }
+
+
+
+ 
 
 }

@@ -6,6 +6,7 @@ import { BookingComponent } from './pages/booking/booking.component';
 import { EmailComponent } from './pages/email/email.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PassportAppointmentComponent } from './pages/services-page/passport-appointment/passport-appointment.component';
+import { PsaComponent } from './pages/services-page/psa/psa.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { VisaProcessingComponent } from './pages/services-page/visa-processing/visa-processing.component';
 import { TourDetailsComponent } from './pages/tour-details/tour-details.component';
@@ -54,6 +55,11 @@ const routes: Routes = [
   {
     path:"about-us",
     component:AboutPageComponent
+  },
+  {
+    path:'services/psa-appointment',
+    component:PsaComponent
+
   },
   
   {

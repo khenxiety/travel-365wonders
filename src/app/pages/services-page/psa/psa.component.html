@@ -1,0 +1,123 @@
+<app-header></app-header>
+<header class="book-header">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="h1-responsive">
+          <span style="font-weight: 200;">Services we</span>
+           <br>
+          Offer
+        </h1>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<section class="" style="position: relative" id="blur">
+ 
+
+  <div class="container">
+    <img class="img-fluid bg-image" src="./assets/wonders/xxxxxx.png" alt="" />
+
+    <h2 class="h1-responsive font-weight-bold my-4">
+      PSA Appointment
+    </h2>
+
+
+    <p class="w-responsive mx-auto mb-2 mt-5">Please fill this up:</p>
+    <div class="row my-3">
+      <div class="col-md-3">
+        <div class="md-form mb-0 d-flex" style="gap: 10px;">
+          <span>Number of copies:</span>
+          <div class="form-check">
+            <input class="form-check-input" (click)="setCopiesValue(1)" type="checkbox" value="1" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              One
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" (click)="setCopiesValue(2)" type="checkbox" value="2" id="flexCheckChecked" >
+            <label class="form-check-label" for="flexCheckChecked">
+              Two
+            </label>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col-md-3">
+        <div class="md-form mb-0">
+          <select
+          class="form-select"
+          [(ngModel)]="appointmentFor"
+          name="appointmentFor"
+          id="appointmentFor"
+          (click)="appointment()"
+
+         
+        >
+          <option [selected]="select">{{select}}</option>
+          <option value="Birth Certificate">Birth Certificate</option>
+          <option value="Death Certificate">Death Certificate</option>
+          <option value="Marriage Certificate">Marriage Certificate</option>
+          <option value="CENOMAR">CENOMAR</option>
+        </select>
+
+        </div>
+      </div>
+      
+      
+      <label for="appointmentFor">Appointment for:</label>
+    </div>
+    
+    
+    <div class="row ">
+      
+      
+      <div class="col-md-9 mb-md-0 mb-5 birth-cert" id="birth-cert">
+        <app-birth></app-birth>
+
+        <div class="status"></div>
+      </div>
+      <div class="col-md-9 mb-md-0 mb-5 marriage" id="marriage">
+        <app-marriage></app-marriage>
+
+        <div class="status"></div>
+      </div>
+      <div class="col-md-9 mb-md-0 mb-5 death" id="death">
+        <app-death></app-death>
+
+        <div class="status"></div>
+      </div>
+      <div class="col-md-9 mb-md-0 mb-5 cenomar" id="cenomar">
+        <app-cenomar></app-cenomar>
+
+        <div class="status"></div>
+      </div>
+
+      
+      
+      
+      <div class="col-md-3 text-center">
+        
+
+        <div class="text-wrapper " style="text-align: left">
+          <strong>Note:</strong>
+          <p class="w-responsive mx-auto">
+            Once we receive the filled form, we will contact you shortly to
+            confirm booking.
+          </p>
+          <p class="w-responsive mx-auto">
+            If you did not receive a confirmation email, please contact us in
+            our <a href="tel:+63-915-780-0776">contact number </a> or email us
+            at our <a href="reservations@365wonders.com">email.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

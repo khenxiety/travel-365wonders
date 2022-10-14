@@ -62,7 +62,7 @@ export class ServicesPageComponent implements OnInit {
       duration: 'Duration varies',
       description:'PSA Filling is NOW available !! Request for your PSA (formerly NSO) birth certificate, marriage certificate,Death certificate and Cenomar.',
       img:'https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.6435-9/139497966_1146561779114238_4004597536206680445_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeFHbMcV_gxf6z-O2da3T1dHYLsr6O6Aq1pguyvo7oCrWm_D5n9IsbTLKK1MY2AbCnQ8pYfqz6RfK489jwryHhQD&_nc_ohc=Yn4_kiXd_L4AX_m3n4o&_nc_ht=scontent.fmnl30-2.fna&oh=00_AT8LBMUPqd78Y2H0nYQVIY-Oe3VXv4lAUWDEIQ-ruA1IEw&oe=627A5226'
-
+      ,route:'/services/psa-appointment'
 
     },
     {
@@ -88,7 +88,8 @@ export class ServicesPageComponent implements OnInit {
       title: 'APOSTILLE',
       duration: 'Duration varies',
       description:'Authenticate the seals and signatures of officials on public documents such as birth certificates, court orders, or any other document issued by a federal agency or certified by an American or foreign consult.',
-      img:'https://www.usauthentication.com/images/home-img1.png'
+      img:'https://www.usauthentication.com/images/home-img1.png',
+      route:'/contact-page'
     }
 
   ]

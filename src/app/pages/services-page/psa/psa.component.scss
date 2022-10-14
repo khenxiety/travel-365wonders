@@ -1,41 +1,48 @@
-section{
-    padding-bottom: 5em;
-   
-    min-height: 100vh;
-    position: relative;
-    background-color: white;
-    .book-header{
-        background-image: linear-gradient(rgba(37, 37, 37, 0.308),rgba(37, 37, 37, 0.308)), url('/assets/wonders/bg3.jpg') ;
+
+.book-header{
+    background-image: linear-gradient(rgba(37, 37, 37, 0.308),rgba(37, 37, 37, 0.308)), url('/assets/wonders/bg1.jpg') ;
+
+    background-size: cover;
+    background-position: center;
+    background-position-y:-300px ;
+    background-repeat: no-repeat;
+
     
-        background-size: cover;
-        background-position: center;
-        background-position-y:-300px ;
-        background-repeat: no-repeat;
-
-        
-        background-attachment: fixed;
-        height: 400px;
-        display: grid;
-        place-items: center;
-        h1{
-            font-size: 4.3rem;
-            font-family: 'Poppins', sans-serif;
-            font-weight:900;
-            line-height: 1;
-            color: #fff;
-            position: relative;
-            width: max-content;
-            z-index: 1;
+    background-attachment: fixed;
+    height: 400px;
+    display: grid;
+    place-items: center;
+    h1{
+        font-size: 4.3rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight:900;
+        line-height: 1;
+        color: #fff;
+        position: relative;
+        width: max-content;
+        z-index: 1;
 
 
-
-        }
-
-
+       
 
     }
 
+
+
 }
+
+
+section{
+    padding-top: 5em;
+    padding-bottom: 5em;
+    min-height: 100vh;
+    position: relative;
+    background-color: white;
+
+    
+
+}
+
 section.open{
     filter: blur(5px);
 }
@@ -63,6 +70,7 @@ select,input,textarea{
 }
 label{
     position: relative;
+    font-weight: 500;
 }
 
 label::after{
@@ -117,13 +125,46 @@ input[type=number] {
 
 
 
-#subject-others{
-    display: none;
+.spouse{
+    display:none;
+}
+.spouse.open{
+    display:block;
+}
+.birth-cert{
+    display:none;
+}
+.birth-cert.open{
+    display:block;
+}
+.marriage{
+    display:none;
+}
+.marriage.open{
+    display:block;
+}
+.death{
+    display:none;
+
+}
+.death.open{
+    display:block;
+}
+.cenomar{
+    display:none;
+}
+.cenomar.open{
+    display:block;
 }
 
-#subject-others.open{
-    display: block;
+
+
+
+.form-check-label{
+    margin-left: 10px;
 }
+
+
 
 @media (max-width: 768px) {
     .book-header{
