@@ -1,3 +1,9 @@
+<div class="loader" *ngIf="isLoading">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status"></div>
+  </div>
+</div>
+
 <div class="main">
   <div class="page-title d-flex align-items-center">
     <span> Dashboard / Manage Posts / Add Post</span>
@@ -13,7 +19,7 @@
           <form id="contact-form" name="contact-form">
             <div class="row my-2">
               <div class="col-md-6">
-                <div class="md-form mb-0">
+                <div class="md-form mb-3">
                   <input
                     type="text"
                     id="title"
@@ -30,7 +36,7 @@
               <br />
 
               <div class="col-md-6">
-                <div class="md-form mb-0">
+                <div class="md-form mb-3">
                   <input
                     type="text"
                     id="price"
@@ -46,7 +52,7 @@
 
             <div class="row my-2">
               <div class="col-md-3">
-                <div class="md-form mb-0">
+                <div class="md-form mb-3">
                   <input
                     type="text"
                     id="location"
@@ -61,7 +67,7 @@
 
             <div class="row my-2">
               <div class="col-md-3">
-                <div class="md-form mb-0">
+                <div class="md-form mb-3">
                   <input
                     type="text"
                     id="days"
@@ -73,7 +79,7 @@
                 </div>
               </div>
               <div class="col-md-3">
-                <div class="md-form mb-0">
+                <div class="md-form mb-3">
                   <input
                     type="text"
                     id="people"
@@ -87,7 +93,7 @@
             </div>
             <div class="row my-2">
               <div class="col-md-3">
-                <div class="md-form mb-0">
+                <div class="md-form mb-3">
                   <input
                     type="text"
                     id="departure"
@@ -99,7 +105,7 @@
                 </div>
               </div>
               <div class="col-md-3">
-                <div class="md-form mb-0">
+                <div class="md-form mb-3">
                   <input
                     type="text"
                     id="return"
@@ -130,26 +136,31 @@
               </div>
             </div>
             <div class="row my-2">
-              <div class="col-md-12">
-                <div class="md-form mb-0">
+              <div class="col-md-4">
+                <div class="md-form mb-3">
                   <input
-                    type="text"
-                    id="image"
-                    name="image"
+                    type="file"
                     class="form-control"
-                    [(ngModel)]="image"
-
+                    (change)="fileChange($event)"
                   />
-                  <label for="image" class=""
-                    >Image
-                    <span class="text-muted">(Provide the image url)</span>
-                  </label>
+                  <input
+                    class="form-control w-20"
+                    type="text"
+                    placeholder="Select file"
+                    disabled
+                    hidden
+                  />
+                  <label for="position">Photo</label>
+
+                  <small class="text-danger" *ngIf="!isFileValid"
+                    >Invalid file. Must be (jpeg or png)</small
+                  >
                 </div>
               </div>
             </div>
             <div class="row my-2">
               <div class="col-md-12">
-                <div class="md-form mb-0">
+                <div class="md-form mb-3">
                   <input
                     type="text"
                     id="facebookpost"
@@ -183,7 +194,12 @@
             <div class="row my-2">
               <div class="col-md-12">
                 <div class="md-form">
-                  <button (click)="addPost()" type="button" class="btn btn-primary">
+                  <button
+                    (click)="uploadFile($event)"
+                    type="button"
+                    class="btn btn-primary"
+                    [disabled]="!isFileValid || isLoading"
+                  >
                     Add post
                   </button>
                 </div>

@@ -43,7 +43,7 @@ import { PassportAppointmentComponent } from './pages/services-page/passport-app
 import { AddPostComponent } from './admin/pages/add-post/add-post.component';
 
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getAuth,provideAuth } from '@angular/fire/auth';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
@@ -56,13 +56,11 @@ import { BirthComponent } from './pages/services-page/psa/forms/birth/birth.comp
 import { MarriageComponent } from './pages/services-page/psa/forms/marriage/marriage.component';
 import { DeathComponent } from './pages/services-page/psa/forms/death/death.component';
 import { CenomarComponent } from './pages/services-page/psa/forms/cenomar/cenomar.component';
-
+import { provideStorage, getStorage } from '@angular/fire/storage';
 
 export function tokenGetter() {
-  return localStorage.getItem("token");
+  return localStorage.getItem('token');
 }
-
-
 
 @NgModule({
   declarations: [
@@ -82,7 +80,7 @@ export function tokenGetter() {
     TiltBottomComponent,
     TestimonialsComponent,
     EmailComponent,
-   
+
     Header2Component,
     BackgroundComponent,
     ConnectComponent,
@@ -100,9 +98,7 @@ export function tokenGetter() {
     BirthComponent,
     MarriageComponent,
     DeathComponent,
-    CenomarComponent
-
-    
+    CenomarComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,24 +108,20 @@ export function tokenGetter() {
     CommonModule,
     FacebookModule.forRoot(),
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), 
+    ToastrModule.forRoot(),
     HttpClientModule,
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig )),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
-    provideAuth(()=>getAuth()),
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
+
     JwtModule.forRoot({
-      config:{
-        tokenGetter: tokenGetter
-        
-      }
+      config: {
+        tokenGetter: tokenGetter,
+      },
     }),
-    
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent],
-  
-
 })
-export class AppModule { }
+export class AppModule {}
